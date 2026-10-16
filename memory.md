@@ -48,13 +48,32 @@
 - Preserved single-knob cascading variables in `globals.css` for instant theme customization.
 - Generated realistic luxury photography for residential dental suite and clinician portrait.
 
+---
+
+## Session Checkpoint: Tier 4 Intake Redesign — "Lumière Noir" Haute Luxury (2026-10-16T03:15:00Z)
+
+### 1. Work Completed This Session
+- [Intake Audit & Redesign]: Executed full visual overhaul per user direction ("fix the whole ui, use something else, i dont like it at all, dont be limited to the stitch script").
+- [Aesthetic Direction Ratified]: "Lumière Noir" Haute Luxury (Deep Obsidian `#0A0B0E`, rich champagne gold `#D4AF37`, frosted glassmorphism, ambient lighting).
+- [Single-Knob Token Migration]: Migrated `:root` CSS variables in `src/globals.css` with zero hardcoded hex values in component markup, ensuring instant Figma-webhook style cascading.
+- [Interactive Patient Persona Switcher]: Implemented dynamic interactive tabs in `src/components/organisms/OrganismWhoWeServe.tsx` covering all 4 personas (Founders & Executives, Parents & Young Families, Anxious & Phobic Patients, Seniors & Bedside Care) with live benefit checklists, metrics, and tailored WhatsApp pre-fills.
+- [Visual Asset Augmentation]: Generated high-resolution executive penthouse study visual (`/images/executive.jpg`) and integrated it into the persona switcher.
+- [Browser Verification]: Audited in browser with subagent recording. Confirmed seamless tab toggling, WCAG AAA text contrast on dark obsidian canvas, responsive mobile view with persistent bottom bar, and zero console errors.
+- [Production Verification]: `npm run build` compiled clean with zero TypeScript errors.
+
+### 2. Architectural Decisions & Deviations
+- Upgraded surface backgrounds to deep obsidian (`#0A0B0E` / `#0F1218`) with glassmorphism backdrop blurs and subtle gold hairline borders (`rgba(212, 175, 55, 0.2)`).
+- Maintained strict Anti-Pill Law (pure typographic hierarchy and Geist Mono tracking; zero pill emoji badges).
+- Retained 100% Logic Freeze on WhatsApp click-to-chat routing and medical compliance disclaimers.
+
 ### 3. Pending Sub-Steps (Immediate Backlog)
-- [ ] Connect custom production WhatsApp phone number in `src/lib/constants.ts` when provided by the client.
+- [ ] Connect production WhatsApp phone number in `src/lib/constants.ts` when ready.
 - [ ] Deploy to Cloudflare Pages or Vercel static hosting.
 
 ### 4. Cold Resumption Prompt & Exact Next Step
-- **Immediate Next Action**: Provide real dentist credentials or phone number in `src/lib/constants.ts` or deploy to hosting.
+- **Immediate Next Action**: Review the live Haute Luxury interface at `http://localhost:3000/` and deploy to production hosting.
 - **Required Context**:
-  - [`src/lib/constants.ts`](file:///src/lib/constants.ts)
+  - [`src/globals.css`](file:///src/globals.css)
+  - [`src/components/organisms/OrganismWhoWeServe.tsx`](file:///src/components/organisms/OrganismWhoWeServe.tsx)
   - [`context/build-checklist.md`](file:///context/build-checklist.md)
 

@@ -37,7 +37,7 @@ export const OrganismFAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-secondary/30 border-t border-border">
+    <section id="faq" className="py-24 md:py-32 bg-secondary/20 border-t border-border relative">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="Common Inquiries"
@@ -46,11 +46,19 @@ export const OrganismFAQ: React.FC = () => {
           align="center"
         />
 
-        <Accordion type="single" collapsible className="w-full bg-card rounded-xl p-6 md:p-8 border border-border shadow-soft">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full bg-card/70 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-primary/20 shadow-card"
+        >
           {faqs.map((faq, idx) => (
-            <AccordionItem key={idx} value={`item-${idx}`}>
-              <AccordionTrigger>{faq.q}</AccordionTrigger>
-              <AccordionContent>{faq.a}</AccordionContent>
+            <AccordionItem key={idx} value={`item-${idx}`} className="border-border/80">
+              <AccordionTrigger className="text-foreground hover:text-primary">
+                {faq.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-sm md:text-base">
+                {faq.a}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

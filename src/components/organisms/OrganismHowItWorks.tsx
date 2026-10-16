@@ -30,7 +30,7 @@ export const OrganismHowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-secondary/30 border-t border-border">
+    <section id="how-it-works" className="py-24 md:py-32 bg-secondary/20 border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="The Experience Protocol"
@@ -45,22 +45,22 @@ export const OrganismHowItWorks: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="relative flex flex-col rounded-lg bg-card p-8 border border-border shadow-soft transition-all duration-300 hover:shadow-card hover:border-primary/40"
+                className="group relative flex flex-col rounded-2xl bg-card/60 backdrop-blur-md p-8 md:p-10 border border-border shadow-soft transition-all duration-300 hover:shadow-hover hover:border-primary/50 hover:-translate-y-1.5"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary-text-safe">
-                    <Icon className="w-5 h-5" strokeWidth={1.75} />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-13 h-13 rounded-2xl bg-secondary border border-border/80 flex items-center justify-center text-primary group-hover:border-primary/40 group-hover:bg-primary/10 transition-colors">
+                    <Icon className="w-6 h-6" strokeWidth={1.5} />
                   </div>
-                  <span className="font-mono text-2xl font-light text-primary/60">
+                  <span className="font-mono text-3xl font-light text-primary/60 group-hover:text-primary transition-colors">
                     {step.number}
                   </span>
                 </div>
 
-                <AtomHeading level="headline-sm" className="text-foreground">
+                <AtomHeading level="headline-sm" className="text-foreground font-serif">
                   {step.title}
                 </AtomHeading>
 
-                <AtomText variant="body" className="mt-3">
+                <AtomText variant="body" className="mt-4 text-muted-foreground leading-relaxed">
                   {step.description}
                 </AtomText>
               </div>

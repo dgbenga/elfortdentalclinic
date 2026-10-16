@@ -22,7 +22,7 @@ export const OrganismExperience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 md:py-28 bg-background border-t border-border">
+    <section id="experience" className="py-24 md:py-32 bg-background border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="Clinical Logistics"
@@ -33,10 +33,10 @@ export const OrganismExperience: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* What We Bring */}
-          <div className="rounded-xl bg-card border border-border p-8 md:p-10 shadow-soft">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary-text-safe">
-                <ShieldCheck className="w-5 h-5" strokeWidth={1.75} />
+          <div className="rounded-2xl bg-card/70 backdrop-blur-md border border-primary/20 p-8 md:p-12 shadow-card hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-3.5 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+                <ShieldCheck className="w-6 h-6" strokeWidth={1.75} />
               </div>
               <div>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-primary-text-safe font-medium">
@@ -50,7 +50,7 @@ export const OrganismExperience: React.FC = () => {
 
             <ul className="space-y-4">
               {brings.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <li key={idx} className="flex items-start gap-3.5 text-sm text-muted-foreground leading-relaxed">
                   <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" strokeWidth={2} />
                   <span>{item}</span>
                 </li>
@@ -59,10 +59,10 @@ export const OrganismExperience: React.FC = () => {
           </div>
 
           {/* What You Provide */}
-          <div className="rounded-xl bg-secondary/50 border border-border p-8 md:p-10 shadow-soft">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center text-primary-text-safe border border-border">
-                <Home className="w-5 h-5" strokeWidth={1.75} />
+          <div className="rounded-2xl bg-secondary/40 backdrop-blur-md border border-border p-8 md:p-12 shadow-card hover:border-border/80 transition-colors">
+            <div className="flex items-center gap-3.5 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center text-primary">
+                <Home className="w-6 h-6" strokeWidth={1.75} />
               </div>
               <div>
                 <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground font-medium">
@@ -76,7 +76,7 @@ export const OrganismExperience: React.FC = () => {
 
             <ul className="space-y-4">
               {provides.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <li key={idx} className="flex items-start gap-3.5 text-sm text-muted-foreground leading-relaxed">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                   <span>{item}</span>
                 </li>

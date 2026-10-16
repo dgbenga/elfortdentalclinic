@@ -25,7 +25,7 @@ export const OrganismServicesGrid: React.FC = () => {
       title: 'Cosmetic Enhancements & Smile Design',
       category: 'Aesthetic Refinement',
       description:
-        'Boutique cosmetic enhancements performed in complete privacy, without the exposure of a waiting room.',
+        'Boutique cosmetic enhancements performed in complete residential privacy, without waiting room visibility.',
       scope: [
         'Professional in-home enamel brightening',
         'Cosmetic composite bonding for chips & gaps',
@@ -38,7 +38,7 @@ export const OrganismServicesGrid: React.FC = () => {
     },
     {
       title: 'Restorative & Gentle Maintenance',
-      category: 'Restorative Excellence',
+      category: 'Restorative Precision',
       description:
         'Precise, durable repairs for existing dental work and prompt relief for localized discomfort.',
       scope: [
@@ -53,7 +53,7 @@ export const OrganismServicesGrid: React.FC = () => {
     },
     {
       title: 'Family & Senior Concierge Dental',
-      category: 'Dedicated Care',
+      category: 'Dedicated Household Care',
       description:
         'Patient-centered care tailored for busy multi-member households and mobility-challenged elders.',
       scope: [
@@ -69,7 +69,7 @@ export const OrganismServicesGrid: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-secondary/40 border-t border-border">
+    <section id="services" className="py-24 md:py-32 bg-background border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="Clinical Offerings"
@@ -93,25 +93,25 @@ export const OrganismServicesGrid: React.FC = () => {
         </div>
 
         {/* Mid-Page Conversion Strip */}
-        <div className="mt-14 rounded-xl bg-card border border-border p-8 md:p-10 shadow-soft flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 rounded-2xl bg-card/80 backdrop-blur-xl border border-primary/20 p-8 md:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center md:text-left">
             <span className="font-mono text-xs uppercase tracking-wider text-primary-text-safe font-medium">
-              Custom Requirements & Feasibility
+              Custom Requirements & Clinical Feasibility
             </span>
-            <h3 className="font-serif text-2xl text-foreground mt-1">
+            <h3 className="font-serif text-2xl text-foreground mt-1.5">
               Need a treatment not listed above?
             </h3>
-            <p className="font-sans text-sm text-muted-foreground mt-2">
-              Send us a brief note on WhatsApp. Dr. Adebayo and the clinical team review every request personally to verify feasibility.
+            <p className="font-sans text-sm text-muted-foreground mt-2 leading-relaxed">
+              Send us a brief note on WhatsApp. Dr. Adebayo and the clinical team review every inquiry personally to confirm equipment feasibility and provide upfront fee estimates.
             </p>
           </div>
           <MoleculeWhatsAppCTA
             message={WHATSAPP_MESSAGES.custom}
             variant="whatsapp-forest"
             size="default"
-            buttonClassName="h-11 px-6 font-semibold"
+            buttonClassName="h-12 px-7 font-semibold shadow-md whitespace-nowrap"
           >
-            Chat Directly on WhatsApp
+            Chat Directly with Doctor
           </MoleculeWhatsAppCTA>
         </div>
       </div>

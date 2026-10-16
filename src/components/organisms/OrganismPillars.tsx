@@ -27,7 +27,7 @@ export const OrganismPillars: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-24 md:py-32 bg-background relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="The Concierge Standard"
@@ -42,18 +42,18 @@ export const OrganismPillars: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="flex flex-col rounded-lg bg-card p-8 border border-border shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-hover"
+                className="group flex flex-col rounded-2xl bg-card/60 backdrop-blur-md p-8 md:p-10 border border-border transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-hover"
               >
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary-text-safe mb-6">
-                  <Icon className="w-6 h-6" strokeWidth={1.75} />
+                <div className="w-14 h-14 rounded-2xl bg-secondary/80 border border-border/60 flex items-center justify-center text-primary mb-7 transition-colors group-hover:border-primary/40 group-hover:bg-primary/10">
+                  <Icon className="w-7 h-7" strokeWidth={1.5} />
                 </div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-text-safe font-medium">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary-text-safe font-medium">
                   {pillar.subtitle}
                 </span>
-                <AtomHeading level="headline-sm" className="mt-2 text-foreground">
+                <AtomHeading level="headline-sm" className="mt-2 text-foreground font-serif">
                   {pillar.title}
                 </AtomHeading>
-                <AtomText variant="body" className="mt-3.5">
+                <AtomText variant="body" className="mt-4 text-muted-foreground leading-relaxed">
                   {pillar.body}
                 </AtomText>
               </div>

@@ -28,7 +28,7 @@ export const OrganismTestimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-secondary/30 border-t border-border">
+    <section className="py-24 md:py-32 bg-secondary/20 border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
           eyebrow="Consented Patient Accounts"
@@ -45,6 +45,7 @@ export const OrganismTestimonials: React.FC = () => {
               author={story.author}
               role={story.role}
               location={story.location}
+              className="bg-card/70 backdrop-blur-md border-border/80 hover:border-primary/50"
             />
           ))}
         </div>

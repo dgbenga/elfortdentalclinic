@@ -4,9 +4,9 @@ import { CLINIC_CONFIG } from '@/lib/constants';
 
 export const OrganismTrustStrip: React.FC = () => {
   return (
-    <section className="w-full bg-card border-y border-border py-8 md:py-10">
+    <section className="w-full bg-card/60 backdrop-blur-md border-y border-border/80 py-10 md:py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-border">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-border/80">
           <MoleculeTrustMetric
             value={CLINIC_CONFIG.experienceYears}
             label="Years Clinical Practice"
@@ -22,7 +22,7 @@ export const OrganismTrustStrip: React.FC = () => {
           <MoleculeTrustMetric
             value="100%"
             label="Hospital-Grade Sterilization"
-            sublabel="Autoclave Monitored"
+            sublabel="Biological Spore Tested"
             className="pt-4 md:pt-0 md:pl-8"
           />
           <MoleculeTrustMetric
