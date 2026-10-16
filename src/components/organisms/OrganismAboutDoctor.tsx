@@ -23,7 +23,7 @@ export const OrganismAboutDoctor: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-dark-surface/90 backdrop-blur-xl border border-primary/30 rounded-xl p-3.5 shadow-xl z-20">
+              <div className="absolute bottom-4 left-4 right-4 bg-card/95 backdrop-blur-xl border border-primary/30 rounded-xl p-3.5 shadow-card z-20">
                 <span className="block font-sans text-sm font-semibold text-foreground">
                   {CLINIC_CONFIG.doctorName}
                 </span>

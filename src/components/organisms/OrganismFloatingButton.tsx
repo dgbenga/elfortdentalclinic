@@ -11,7 +11,7 @@ export const OrganismFloatingButton: React.FC = () => {
       aria-label="Direct Concierge Chat Trigger"
     >
       {/* Tooltip on hover */}
-      <span className="pointer-events-none absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-md bg-dark-surface px-3 py-1.5 font-mono text-xs text-dark-foreground opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 border border-border/20">
+      <span className="pointer-events-none absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-card px-3 py-1.5 font-mono text-xs text-foreground opacity-0 shadow-card transition-opacity duration-200 group-hover:opacity-100 border border-border">
         Direct Concierge Chat
       </span>
 

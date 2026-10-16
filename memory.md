@@ -66,14 +66,38 @@
 - Maintained strict Anti-Pill Law (pure typographic hierarchy and Geist Mono tracking; zero pill emoji badges).
 - Retained 100% Logic Freeze on WhatsApp click-to-chat routing and medical compliance disclaimers.
 
+---
+
+## Session Checkpoint: "Luminous Silk & Royal Emerald" Light Luxury Theme (2026-10-16T03:35:00Z)
+
+### 1. Work Completed This Session
+- [Palette Overhaul]: Eliminated dark colors per user direction ("i dont like the dark colours"). Transitioned to "Luminous Silk & Royal Emerald" Haute Light Luxury.
+- [Single-Knob Token Migration]:
+  - Canvas: Luminous Warm Pearl Silk (`#FAF8F5`).
+  - Surfaces: Pure Crisp Floating White Card surfaces (`#FFFFFF`) with soft diffused elevation shadows.
+  - Typography: Deep Obsidian Charcoal (`#14171F`) for high-contrast headlines and Slate Truffle (`#5C626D`) for body text.
+  - Accents: Brushed Champagne Gold (`#BD9138`) for fine borders and indicators.
+  - Primary Conversion CTAs: Deep Royal British Racing Emerald (`#0B5C35`) with crisp white text (WCAG AA > 5.2:1).
+- [Component Refinement]:
+  - Updated all navigation, hero booking badges, doctor credentials, mobile persistent bottom bar, and footer to pure luminous light surfaces.
+  - Kept interactive Patient Persona Switcher fully functional with light luxury tabs and active state indicators.
+- [Browser & Build Verification]:
+  - `npm run build` compiled cleanly in 5.3s with zero errors.
+  - Browser subagent verified light pearl canvas, crisp typography, responsive layout, and mobile bar.
+
+### 2. Architectural Decisions & Deviations
+- Preserved single-knob cascading variables in `globals.css` wired to `tailwind.config.ts`.
+- Retained 100% Logic Freeze on WhatsApp click-to-chat routing and medical compliance disclaimers.
+
 ### 3. Pending Sub-Steps (Immediate Backlog)
 - [ ] Connect production WhatsApp phone number in `src/lib/constants.ts` when ready.
 - [ ] Deploy to Cloudflare Pages or Vercel static hosting.
 
 ### 4. Cold Resumption Prompt & Exact Next Step
-- **Immediate Next Action**: Review the live Haute Luxury interface at `http://localhost:3000/` and deploy to production hosting.
+- **Immediate Next Action**: Review the live Luminous Silk interface at `http://localhost:3000/` and deploy to production hosting.
 - **Required Context**:
   - [`src/globals.css`](file:///src/globals.css)
   - [`src/components/organisms/OrganismWhoWeServe.tsx`](file:///src/components/organisms/OrganismWhoWeServe.tsx)
   - [`context/build-checklist.md`](file:///context/build-checklist.md)
+
 

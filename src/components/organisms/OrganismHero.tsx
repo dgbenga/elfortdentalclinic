@@ -95,7 +95,7 @@ export const OrganismHero: React.FC = () => {
               />
 
               {/* Glassmorphism Live Booking Badge */}
-              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-dark-surface/90 backdrop-blur-xl border border-primary/30 rounded-xl py-3 px-4 shadow-xl z-20">
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-card/95 backdrop-blur-xl border border-primary/40 rounded-xl py-3 px-4 shadow-card z-20">
                 <div className="flex items-center gap-2.5">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
