@@ -1,4 +1,4 @@
-# AGENTS.md — High-End Standards for Aurelia Concierge Dentistry (Tier 1)
+# AGENTS.md — High-End Standards for Elfort Dental Clinic (Tier 1)
 
 ## Why These Rules Exist
 

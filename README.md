@@ -1,13 +1,13 @@
-# Aurelia Concierge Dentistry
+# Elfort Dental Clinic — Concierge Care
 
 > **Exceptional Dental Care, Delivered to Your Doorstep.**  
-> High-end, conversion-focused landing page for a solo concierge home-service dentist.
+> High-end, conversion-focused landing page for Elfort Dental Clinic's concierge in-home dental service.
 
 ---
 
 ## Overview
 
-Aurelia Concierge Dentistry is a single-page, mobile-first conversion engine tailored for high-net-worth executives, families, and dental-phobic patients who value unhurried, clinical-grade dental care in complete privacy.
+Elfort Dental Clinic Concierge Service is a single-page, mobile-first conversion engine tailored for high-net-worth executives, families, and dental-phobic patients who value unhurried, clinical-grade dental care in complete privacy.
 
 * **Tier:** Tier 1: Mini-Website
 * **Conversion Engine:** Direct WhatsApp API integration (`wa.me`) with prefilled clinical service parameters.

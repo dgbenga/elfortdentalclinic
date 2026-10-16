@@ -1,6 +1,6 @@
-# Build Checklist: Aurelia Concierge Dentistry
+# Build Checklist: Elfort Dental Clinic
 
-**Scope:** The deterministic Definition of Done for Aurelia Concierge Dentistry. The page cannot be declared production-ready until every item below is audited and verified.
+**Scope:** The deterministic Definition of Done for Elfort Dental Clinic. The page cannot be declared production-ready until every item below is audited and verified.
 
 ---
 
@@ -54,7 +54,7 @@
 ---
 
 ## 7. SEO & Compliance Foundations
-- [ ] **Metadata:** Unique title (`<title>Aurelia Concierge Dentistry | Private In-Home Dental Care</title>`) and compelling meta description (< 155 chars).
+- [ ] **Metadata:** Unique title (`<title>Elfort Dental Clinic | Private In-Home Concierge Care</title>`) and compelling meta description (< 155 chars).
 - [ ] **OpenGraph:** Social share image (`og:image`), title, and description configured.
 - [ ] **Structured Data:** `LocalBusiness` / `Dentist` JSON-LD schema with areaServed, priceRange, telephone, and openingHours.
 - [ ] **Medical & Emergency Disclaimers:** Clear notice redirecting severe trauma/bleeding to local emergency services ([911]).

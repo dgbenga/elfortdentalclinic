@@ -1,6 +1,6 @@
-# Page Specifications & Wireframes: Aurelia Concierge Dentistry
+# Page Specifications & Wireframes: Elfort Dental Clinic
 
-**Scope:** Complete Section-by-Section Wireframe Specifications, Atomic Component Breakdown, and Finalized Human Copy for the Aurelia Concierge Dentistry Landing Page.  
+**Scope:** Complete Section-by-Section Wireframe Specifications, Atomic Component Breakdown, and Finalized Human Copy for the Elfort Dental Clinic Concierge Landing Page.  
 **Invariants Enforced:** Zero Lorem Ipsum • Anti-Pill Law (No emoji badge chips) • Atomic Component Decomposition • WCAG 2.1 AA Contrast Enforced • Mobile Overlap Fixed (`hidden md:flex`).
 
 ---
@@ -50,7 +50,7 @@
 * **Position:** Fixed top (Z-Index 40, Height 80px, Background `--background/90` with backdrop blur).
 * **Layout:** Container max-80rem, flex justify-between items-center.
 * **Element Inventory:**
-  1. Wordmark: `"AURELIA"` (Instrument Serif, 24px, tracking 0.05em) + sub-label `"CONCIERGE DENTISTRY"` (Geist Mono, 9px, tracking 0.2em).
+  1. Wordmark: `"ELFORT"` (Instrument Serif, 24px, tracking 0.05em) + sub-label `"DENTAL CLINIC • CONCIERGE"` (Geist Mono, 9px, tracking 0.2em).
   2. Desktop Navigation: `#services` ("Services"), `#how-it-works` ("How It Works"), `#experience` ("The Visit"), `#about` ("About Dr. [Name]"), `#faq` ("FAQ").
   3. Action CTA: `MoleculeWhatsAppCTA` ("Inquire on WhatsApp", compact variant, forest green).
 * **Mobile Behavior:** Nav links hidden; wordmark left, compact WhatsApp icon button right.
@@ -142,7 +142,7 @@
 
 ---
 
-### SECTION 6: Who Aurelia Serves (Persona Self-Identification)
+### SECTION 6: Who Elfort Serves (Persona Self-Identification)
 * **Position:** Section 6.
 * **Layout:** 4-Column Horizontal Cards (Desktop), 2x2 (Tablet), 1-Col (Mobile).
 * **Headline:** `"Tailored Care for Discerning Lifestyles"`
@@ -168,7 +168,7 @@
 ### SECTION 8: The In-Home Experience ("What We Bring / What You Provide")
 * **Position:** `#experience`.
 * **Layout:** Side-by-side 2-column comparison card dispelling equipment fears.
-* **Left Column ("What Aurelia Brings"):**
+* **Left Column ("What Elfort Brings"):**
   - Portable ergonomic treatment unit & silent air compressor
   - Ultra-low radiation handheld digital x-ray sensor
   - Hospital-grade autoclave sterilized instrument cassettes
@@ -189,7 +189,7 @@
 * **Testimonials:**
   1. `"Having Dr. [Name] come to our home was life-changing for our family. Both kids had their teeth cleaned in their pajamas without a single tear, and I answered work emails in the other room. We will never go back to a waiting room."` — *Eleanor M., Mother of Two, [Neighborhood]*
   2. `"As someone who avoided the dentist for six years due to extreme panic, the unhurried gentleness of this visit was remarkable. Dr. [Name] was completely patient, explained every step, and treated me in my favorite armchair."` — *Marcus V., Managing Partner, [Financial District]*
-  3. `"My mother has severe arthritis and getting her into a clinic chair was traumatic. Aurelia provided gentle, dignified cleaning right at her bedside. Highly recommended for senior care."` — *Sarah K., [Neighborhood]*
+  3. `"My mother has severe arthritis and getting her into a clinic chair was traumatic. Elfort provided gentle, dignified cleaning right at her bedside. Highly recommended for senior care."` — *Sarah K., [Neighborhood]*
 
 ---
 
@@ -198,7 +198,7 @@
 * **Layout:** 40/60 Split (Doctor Portrait Left, Bio & Credentials Right).
 * **Headline:** `"A Commitment to Uncompromising, Patient-First Dentistry"`
 * **Doctor Bio:**
-  - `"Dr. [First & Last Name], DDS / DMD, founded Aurelia Concierge Dentistry with a clear conviction: exceptional clinical dentistry should fit effortlessly into patients' lives, not demand their day. With over [12] years of clinical practice and advanced training in anxiety-free restorative protocols, Dr. [Name] brings the standards of a premier private clinic directly to your personal sanctuary."`
+  - `"Dr. [First & Last Name], DDS / DMD, founded Elfort Dental Clinic with a clear conviction: exceptional clinical dentistry should fit effortlessly into patients' lives, not demand their day. With over [12] years of clinical practice and advanced training in anxiety-free restorative protocols, Dr. [Name] brings the standards of a premier private clinic directly to your personal sanctuary."`
   - Verified Credentials Box:
     * Dental Degree: `[University / Dental School, Year]`
     * State Dental Board License No: `[License No. Verified]`
@@ -218,7 +218,7 @@
   3. **Q: What are your fees, and do you accept dental insurance?**  
      *A: We operate on an upfront, transparent fee schedule with zero surprise bills. We provide detailed itemized superbills with standard dental procedure codes that you can submit to your PPO dental insurer for out-of-network reimbursement. We provide exact visit estimates via WhatsApp before confirming your booking.*
   4. **Q: I experience severe dental phobia. How do you handle anxious patients?**  
-     *A: Anxiety-free care is a foundational pillar of Aurelia. You are always in control: you decide when we begin, when we take a break, and what music you prefer. There are no cold waiting rooms, no clinical smells, and no judgment regarding past dental neglect.*
+     *A: Anxiety-free care is a foundational pillar of Elfort Dental Clinic. You are always in control: you decide when we begin, when we take a break, and what music you prefer. There are no cold waiting rooms, no clinical smells, and no judgment regarding past dental neglect.*
   5. **Q: What areas do you serve, and what is your advance booking time?**  
      *A: We serve patients throughout [City/Metropolitan Area] within a [15-mile / 25km] radius. We typically schedule visits 2 to 5 days in advance, with limited same-day or next-day slots reserved for urgent needs.*
   6. **Q: How do you handle true dental emergencies?**  
@@ -239,11 +239,11 @@
 ### SECTION 13: Practice Details & Legal Footer
 * **Position:** Bottom of page.
 * **Layout:** 3-Column Footer Grid + Bottom Legal Copyright Bar.
-* **Column 1:** Aurelia Concierge Dentistry wordmark, operating philosophy, and direct emergency medical disclaimer.
+* **Column 1:** Elfort Dental Clinic wordmark, operating philosophy, and direct emergency medical disclaimer.
 * **Column 2:** Service Area ([City / Neighborhoods]), Operating Hours (`Mon–Sat 8:00 AM – 7:00 PM • Sunday Emergency On-Call`).
 * **Column 3:** Direct Contact (`WhatsApp: [Phone Number]`, `Email: concierge@[domain].com`).
 * **Legal Bar:**
-  - Copyright: `© 2026 Aurelia Concierge Dentistry. All rights reserved.`
+  - Copyright: `© 2026 Elfort Dental Clinic. All rights reserved.`
   - Medical Disclaimer: `"The information on this website is for informational purposes and does not establish a dentist-patient relationship until an in-person clinical examination is conducted."`
   - Links: `Privacy Policy`, `Terms of Service`, `Accessibility Statement`.
 

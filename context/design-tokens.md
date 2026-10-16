@@ -1,4 +1,4 @@
-# Design Tokens: Aurelia Concierge Dentistry (Direction A — Quiet Luxury Editorial)
+# Design Tokens: Elfort Dental Clinic (Direction A — Quiet Luxury Editorial)
 
 **Aesthetic Direction:** Direction A — "Quiet Luxury Editorial"  
 **Brand Identity:** Private Physician meets 5-Star Boutique Hospitality (Aman / Four Seasons aesthetic).  

@@ -1,7 +1,7 @@
-# Site Overview: Aurelia Concierge Dentistry
+# Site Overview: Elfort Dental Clinic
 
 **Tier Calibrated:** Tier 1: Mini-Website  
-**Project Mission:** Single-page high-converting marketing landing page for Aurelia Concierge Dentistry, delivering unhurried, private, hospital-grade dental care directly to patient residences and private executive suites.  
+**Project Mission:** Single-page high-converting marketing landing page for Elfort Dental Clinic Concierge Service, delivering unhurried, private, hospital-grade dental care directly to patient residences and private executive suites.  
 **Primary Conversion:** Direct WhatsApp enquiry (`wa.me`) with prefilled service intent, eliminating the friction of multi-step intake forms.  
 **Financial & Operational Scope:** Bootstrapped Lean Launch ($0/mo recurring SaaS overhead using Cloudflare Pages / Vercel static hosting and direct WhatsApp business routing).  
 
@@ -9,7 +9,7 @@
 
 ## 1. The Core Offer
 
-Aurelia brings a fully mobile, hospital-grade dental suite directly into your home or private office. Directed by Dr. [Dentist Name], we provide comprehensive preventive care, aesthetic smile design, gentle maintenance, and dignified bedside care for busy executives, parents with young children, and phobic patients who demand clinical excellence in complete privacy.
+Elfort Dental Clinic brings a fully mobile, hospital-grade dental suite directly into your home or private office. Directed by Dr. [Dentist Name], we provide comprehensive preventive care, aesthetic smile design, gentle maintenance, and dignified bedside care for busy executives, parents with young children, and phobic patients who demand clinical excellence in complete privacy.
 
 ---
 
@@ -25,7 +25,7 @@ Aurelia brings a fully mobile, hospital-grade dental suite directly into your ho
 | **Seniors & Limited Mobility** | Dignified, comfortable bedside and living room dental hygiene. | *"Can someone actually do a real cleaning or adjustment if the patient cannot sit upright?"* | Bedside adaptability, compassionate mobile ergonomics, zero transport trauma. |
 
 ### 2.2 Jakob's Law Familiar Market Patterns
-High-net-worth medical consumers benchmark Aurelia against elite hospitality and modern private clinics:
+High-net-worth medical consumers benchmark Elfort Dental Clinic against elite hospitality and modern private clinics:
 * **Hospitality (Aman Resorts, Four Seasons):** Calm neutral stone palettes, warm taupe accents, generous white space, quiet confidence without flashing banners.
 * **Modern Health (One Medical, Forward Health):** Clear step-by-step visit breakdowns, transparent equipment explanations, instant chat-first communication.
 * **E-Commerce & SaaS (Stripe, Linear):** Single-click primary CTAs, 44px minimum tap targets, zero cognitive clutter, sub-second LCP.
@@ -55,9 +55,9 @@ High-net-worth medical consumers benchmark Aurelia against elite hospitality and
 
 ## 3. Site Navigation & Information Architecture
 
-Aurelia is engineered as a single-page conversion architecture with smooth anchor navigation:
+Elfort Dental Clinic is engineered as a single-page conversion architecture with smooth anchor navigation:
 
-1. **Sticky Header:** Aurelia wordmark, anchor links (`#services`, `#how-it-works`, `#experience`, `#about`, `#faq`), and primary CTA button.
+1. **Sticky Header:** Elfort Dental Clinic wordmark, anchor links (`#services`, `#how-it-works`, `#experience`, `#about`, `#faq`), and primary CTA button.
 2. **Announcement Strip:** Operating schedule (`Mon–Sat 8AM–7PM`), service radius, and license reassurance.
 3. **Hero Section:** High-character typography, dual CTA (`Request Home Visit on WhatsApp` + secondary `Explore Services`), live status indicator (`Now Booking [City/Area]`), reassurance micro-copy.
 4. **Trust Metric Strip:** 4 quantified credentials (Years in practice, Home visits conducted, Hospital-grade sterilization standard, 100% private).
@@ -67,7 +67,7 @@ Aurelia is engineered as a single-page conversion architecture with smooth ancho
    - Cosmetic Enhancements & Smile Design (`ref=cosmetic`)
    - Restorative & Maintenance Care (`ref=restorative`)
    - Family & Senior Concierge Dental (`ref=family-senior`)
-7. **Who Aurelia Serves:** 4 persona identification cards (Executives, Parents, Phobic Patients, Seniors).
+7. **Who We Serve (Elfort Personas):** 4 persona identification cards (Executives, Parents, Phobic Patients, Seniors).
 8. **How It Works (3 Steps):** Step 1: Connect on WhatsApp • Step 2: Virtual Screening & Custom Plan • Step 3: Concierge Arrival & Unhurried Care.
 9. **In-Home Experience ("What We Bring / What You Provide"):** Explicit breakdown dispelling equipment fears.
 10. **Testimonials & Social Proof:** Consented patient stories emphasizing gentleness, discretion, and punctuality.
