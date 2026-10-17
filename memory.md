@@ -89,15 +89,42 @@
 - Preserved single-knob cascading variables in `globals.css` wired to `tailwind.config.ts`.
 - Retained 100% Logic Freeze on WhatsApp click-to-chat routing and medical compliance disclaimers.
 
+
+## Session Checkpoint: Conversion Copy Deck Full Integration (2026-10-17T01:55:00Z)
+
+### 1. Work Completed This Session
+- [Conversion Copy Deck Ingestion]: Integrated complete copy from `concierge-dentist-conversion-copy.md` (`conversion-copy.md`) across all 16 page organisms, constants, and HTML meta tags.
+- [Header & Announcement Strip]: Updated announcement strip metadata, desktop navigation, and mobile "Book Now" / desktop "Book on WhatsApp" CTA triggers.
+- [Hero Section]: Locked recommended headline (*"The Dentist Who Comes to Your Door."*), unhurried subheadline, primary CTA (*"Book My Home Visit on WhatsApp"*), secondary link (*"See What We Treat"*), and micro-reassurance (*"Chat directly with the dentist’s team · No forms · No obligation"*).
+- [Trust Strip & Three Pillars]: Calibrated established trust metrics and Three Pillars (*A Real Dentist. Real Standards.*, *Calm From the First Minute.*, *Private by Design.*).
+- [Services Grid & Mid-Page CTA]: Integrated 4 core service cards, honesty line (*"If something needs a clinic, we’ll tell you straight and help you arrange it."*), and mid-page consultation strip (*"Not sure what you need? Ask on WhatsApp"*).
+- [Who We Serve Switcher]: Embedded 4 audience narratives (Busy Professionals, Parents, Seniors & Limited Mobility, Dental Anxiety) with tailored benefits, metrics, and quotes.
+- [How It Works]: Standardized 3-step visit flow (*Message Us on WhatsApp*, *Get Your Plan and Price*, *We Arrive and Take Care of You*).
+- [The In-Home Experience]: Implemented *We Bring the Clinic. You Bring the Chair.* with equipment list, patient requirements, closing line, and verified resident quote.
+- [Testimonials & Our Promise]: Embedded time-poor, anxious, and family caregiver accounts alongside the 3-point patient guarantee (*Clear price*, *No upselling*, *Honest clinic referrals*).
+- [About the Dentist]: Configured Dr. Olufemi Adebayo, BDS credentials, quotation, bio, verified clinical memberships, and direct *"Chat With Dr. Adebayo"* button.
+- [FAQ & Soft CTA]: Replaced all accordion items with the 8 conversion copy deck questions & answers, plus soft inquiry CTA.
+- [Final CTA & Footer]: Updated final banner (*"Ready for Dental Care on Your Terms?"*), persistent mobile bar with *"Usually replies in minutes"*, desktop *"Chat With Us"* trigger, and legal disclaimer.
+- [Anti-Pill Law Strict Adherence]: Eliminated all pills and emoji chips; preserved pure typographic hierarchy and metadata tracking.
+- [Testing & Quality Assurance]:
+  - `npm run build` compiled clean with zero TypeScript errors in 7.7s.
+  - Automated browser subagent verified 1440px desktop and 375px mobile viewports (zero horizontal overflow, responsive layout, clean console).
+  - Git commit recorded on `main` (`b48ea46`).
+
+### 2. Architectural Decisions & Deviations
+- Retained "Luminous Silk & Royal Emerald" single-knob design system in `globals.css`.
+- Synchronized all 6 WhatsApp prefilled messages in `src/lib/constants.ts` with Section 14 of the conversion copy deck.
+- Preserved desktop-only restriction on floating concierge button (`hidden md:flex`) to eliminate mobile collisions with the 68px persistent bottom bar.
+
 ### 3. Pending Sub-Steps (Immediate Backlog)
 - [ ] Connect production WhatsApp phone number in `src/lib/constants.ts` when ready.
 - [ ] Deploy to Cloudflare Pages or Vercel static hosting.
 
 ### 4. Cold Resumption Prompt & Exact Next Step
-- **Immediate Next Action**: Review the live Luminous Silk interface at `http://localhost:3000/` and deploy to production hosting.
+- **Immediate Next Action**: Review the live interface on `http://localhost:3000/` and deploy to production hosting.
 - **Required Context**:
-  - [`src/globals.css`](file:///src/globals.css)
-  - [`src/components/organisms/OrganismWhoWeServe.tsx`](file:///src/components/organisms/OrganismWhoWeServe.tsx)
+  - [`src/lib/constants.ts`](file:///src/lib/constants.ts)
+  - [`conversion-copy.md`](file:///conversion-copy.md)
   - [`context/build-checklist.md`](file:///context/build-checklist.md)
 
 
