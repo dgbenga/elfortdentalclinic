@@ -7,64 +7,56 @@ import { WHATSAPP_MESSAGES } from '@/lib/constants';
 export const OrganismServicesGrid: React.FC = () => {
   const services = [
     {
-      title: 'Comprehensive Preventive Suite',
-      category: 'Preventive & Wellness',
+      title: 'Check-Ups and Cleanings',
+      category: 'Preventive Care',
       description:
-        'Thorough routine maintenance designed to protect your natural smile with zero discomfort or hurry.',
+        'Stay ahead of problems with a thorough exam and a professional clean, done gently and without rushing.',
       scope: [
-        'Ultrasonic plaque & calculus removal',
-        'Gentle periodontal assessment & scaling',
-        'Comprehensive oral cancer screening',
-        'Remineralizing fluoride enamel therapies',
-        'Ultra-low-dose digital diagnostic imaging',
+        'Complete tooth and gum check',
+        'Professional scale and polish',
+        'Clear advice on what you actually need',
       ],
-      whatsappMessage: WHATSAPP_MESSAGES.preventive,
-      ctaText: 'Inquire for Preventive Visit',
+      whatsappMessage: WHATSAPP_MESSAGES.checkup,
+      ctaText: 'Book a check-up',
     },
     {
-      title: 'Cosmetic Enhancements & Smile Design',
-      category: 'Aesthetic Refinement',
+      title: 'Smile Brightening and Cosmetic Care',
+      category: 'Cosmetic Care',
       description:
-        'Boutique cosmetic enhancements performed in complete residential privacy, without waiting room visibility.',
+        'Look as good as you feel. Safe, professional whitening and honest advice on improving your smile.',
       scope: [
-        'Professional in-home enamel brightening',
-        'Cosmetic composite bonding for chips & gaps',
-        'Custom-fitted nighttime bruxism guards',
-        'Clear aligner orthodontic consultations',
-        'Aesthetic smile contouring & shade analysis',
+        'Professional teeth whitening',
+        'Smile consultation',
+        'Guidance on stains and sensitivity',
       ],
-      whatsappMessage: WHATSAPP_MESSAGES.cosmetic,
-      ctaText: 'Inquire for Cosmetic Care',
+      whatsappMessage: WHATSAPP_MESSAGES.whitening,
+      ctaText: 'Ask about whitening',
     },
     {
-      title: 'Restorative & Gentle Maintenance',
-      category: 'Restorative Precision',
+      title: 'Repairs and Restorative Care',
+      category: 'Restorative Care',
       description:
-        'Precise, durable repairs for existing dental work and prompt relief for localized discomfort.',
+        'Fix what’s bothering you. Fillings, sealants, adjustments and follow-up care, handled where you’re comfortable.',
       scope: [
-        'Tooth-colored composite restorations',
-        'Crown recementation & bridge maintenance',
-        'Urgent chipped tooth stabilization',
-        'Desensitizing therapies for temperature sensitivity',
-        'At-home bite balancing & occlusion adjustments',
+        'Fillings and tooth repairs',
+        'Sealants and adjustments',
+        'Post-treatment check-ups',
       ],
-      whatsappMessage: WHATSAPP_MESSAGES.restorative,
-      ctaText: 'Inquire for Restorative Care',
+      whatsappMessage: WHATSAPP_MESSAGES.repairs,
+      ctaText: 'Ask about a repair',
     },
     {
-      title: 'Family & Senior Concierge Dental',
-      category: 'Dedicated Household Care',
+      title: 'Family and Senior Care',
+      category: 'Household & Senior Care',
       description:
-        'Patient-centered care tailored for busy multi-member households and mobility-challenged elders.',
+        'One visit for the whole household, plus dignified, comfortable care for relatives who find travel difficult.',
       scope: [
-        'Back-to-back household family checkups',
-        'Gentle, tear-free pediatric habituation',
-        'Dignified bedside care for aging parents',
-        'Full & partial denture adjustments & relining',
-        'Zero-transfer mobility accommodation in armchairs',
+        'Back-to-back family appointments',
+        'Gentle care for seniors',
+        'Friendly first visits for children',
       ],
-      whatsappMessage: WHATSAPP_MESSAGES.familySenior,
-      ctaText: 'Inquire for Family / Senior Visit',
+      whatsappMessage: WHATSAPP_MESSAGES.family,
+      ctaText: 'Book for my family',
     },
   ];
 
@@ -72,9 +64,9 @@ export const OrganismServicesGrid: React.FC = () => {
     <section id="services" className="py-24 md:py-32 bg-background border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
-          eyebrow="Clinical Offerings"
-          title="Clinical Treatments in the Sanctuary of Your Home"
-          description="Every appointment includes complete digital diagnostics, sterilized single-use barriers, and unhurried clinical attention."
+          eyebrow="What We Treat at Home"
+          title="Complete Dental Care, Brought to Your Door."
+          description="From routine check-ups to a brighter smile, much of what you need can be done in the comfort of your home."
           align="center"
         />
 
@@ -87,31 +79,38 @@ export const OrganismServicesGrid: React.FC = () => {
               description={svc.description}
               scope={svc.scope}
               whatsappMessage={svc.whatsappMessage}
-              ctaText={svc.ctaText}
+              ctaText={`${svc.ctaText} →`}
             />
           ))}
         </div>
 
+        {/* Honesty Line */}
+        <div className="mt-8 text-center">
+          <p className="font-serif italic text-base md:text-lg text-foreground/80">
+            "If something needs a clinic, we’ll tell you straight and help you arrange it."
+          </p>
+        </div>
+
         {/* Mid-Page Conversion Strip */}
-        <div className="mt-14 rounded-2xl bg-card/80 backdrop-blur-xl border border-primary/20 p-8 md:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 rounded-2xl bg-card/90 backdrop-blur-xl border border-primary/20 p-8 md:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center md:text-left">
             <span className="font-mono text-xs uppercase tracking-wider text-primary-text-safe font-medium">
-              Custom Requirements & Clinical Feasibility
+              Direct Clinical Consultation
             </span>
             <h3 className="font-serif text-2xl text-foreground mt-1.5">
-              Need a treatment not listed above?
+              Not sure what you need?
             </h3>
             <p className="font-sans text-sm text-muted-foreground mt-2 leading-relaxed">
-              Send us a brief note on WhatsApp. Dr. Adebayo and the clinical team review every inquiry personally to confirm equipment feasibility and provide upfront fee estimates.
+              Tell us what’s bothering you on WhatsApp. We’ll tell you honestly whether it can be treated at home.
             </p>
           </div>
           <MoleculeWhatsAppCTA
-            message={WHATSAPP_MESSAGES.custom}
+            message={WHATSAPP_MESSAGES.hero}
             variant="whatsapp-forest"
             size="default"
             buttonClassName="h-12 px-7 font-semibold shadow-md whitespace-nowrap"
           >
-            Chat Directly with Doctor
+            Ask on WhatsApp
           </MoleculeWhatsAppCTA>
         </div>
       </div>

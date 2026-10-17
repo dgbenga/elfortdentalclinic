@@ -13,16 +13,17 @@ export const OrganismMobileBar: React.FC = () => {
           Elfort Concierge
         </span>
         <span className="font-mono text-[10px] text-primary-text-safe mt-0.5">
-          Replies in minutes
+          Usually replies in minutes
         </span>
       </div>
 
       <MoleculeWhatsAppCTA
         message={WHATSAPP_MESSAGES.hero}
         size="sm"
-        buttonClassName="h-11 px-5 text-xs font-semibold shadow-md min-h-[44px]"
+        buttonClassName="h-11 px-4 sm:px-5 text-xs font-semibold shadow-md min-h-[44px]"
       >
-        Book on WhatsApp
+        <span className="hidden xs:inline">Book Home Visit on WhatsApp</span>
+        <span className="xs:hidden">Book Home Visit</span>
       </MoleculeWhatsAppCTA>
     </aside>
   );

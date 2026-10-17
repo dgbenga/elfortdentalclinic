@@ -8,21 +8,21 @@ export const OrganismPillars: React.FC = () => {
   const pillars = [
     {
       icon: ShieldCheck,
-      title: 'Hospital-Grade Precision',
+      title: 'A Real Dentist. Real Standards.',
       subtitle: 'Clinical Authority',
-      body: 'We transport complete clinical capabilities into your home—from ultra-low-radiation digital sensors to biological autoclave monitored instruments. Zero compromises on clinical rigor.',
+      body: 'You are treated by a licensed dentist from start to finish, never passed between staff. Instruments arrive sterile and sealed, and every visit follows strict infection-control protocols.',
     },
     {
       icon: HeartHandshake,
-      title: 'Calm, Unhurried Appointments',
+      title: 'Calm From the First Minute.',
       subtitle: 'Zero Anxiety',
-      body: 'Never feel rushed, judged, or trapped in a noisy waiting room. You control the pace of every treatment in your own living room, armchair, or bedroom.',
+      body: 'No waiting-room tension, no clinic smells, no clock-watching. Choose your chair, your music and your pace. Need a pause? You get one.',
     },
     {
       icon: EyeOff,
-      title: 'Absolute Privacy & Convenience',
+      title: 'Private by Design.',
       subtitle: 'Boutique Discretion',
-      body: 'Unmarked arrivals, confidential treatment, and flexible scheduling designed around demanding executive and family itineraries.',
+      body: 'Discreet scheduling, one-to-one appointments and careful handling of your information. Made for busy professionals, families and anyone who values privacy.',
     },
   ];
 
@@ -30,9 +30,9 @@ export const OrganismPillars: React.FC = () => {
     <section className="py-24 md:py-32 bg-background relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
-          eyebrow="The Concierge Standard"
-          title="Dentistry Reimagined Around Your Life"
-          description="Combining the clinical rigor of an elite private practice with the serene comfort and discretion of high-touch hospitality."
+          eyebrow="Why Patients Switch"
+          title="Everything Good About a Clinic. None of the Hassle."
+          description="Professional standards, delivered with the calm of your own space."
           align="center"
         />
 

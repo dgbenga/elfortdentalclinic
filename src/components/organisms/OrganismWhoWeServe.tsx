@@ -30,114 +30,114 @@ export const OrganismWhoWeServe: React.FC = () => {
   const personas: PersonaData[] = [
     {
       id: 'executives',
-      tabLabel: 'Founders & Executives',
+      tabLabel: 'Busy Professionals',
       icon: Briefcase,
-      eyebrow: 'Executive Itinerary Concierge',
-      headline: 'Zero Billable Hours Lost. Care Conducted in Your Private Office.',
+      eyebrow: 'Work & Life Balance',
+      headline: 'Get dental care between meetings, not instead of them.',
       story:
-        'Eliminate the 2.5-hour clinic disruption of traffic, parking decks, and waiting rooms. Our clinical team sets up in your private office or penthouse study in under 10 minutes, allowing you to complete your routine dental hygiene between meetings or while reviewing briefs.',
+        'Skip the traffic, the waiting room and the nerves. Get thorough, unhurried dental care in your own home or office, from one dentist who gives you their full attention.',
       benefits: [
-        'Unmarked executive arrival with discreet equipment cases',
-        'Direct scheduling matching demanding corporate calendars',
-        'Ultra-quiet mobile instruments causing zero acoustic disruption',
+        'Dental care between meetings, not instead of them',
+        'No commute and zero lost half-days',
+        'Discreet, confidential appointments in your private space',
       ],
       metrics: [
-        { label: 'Travel Time Saved', value: '2.5 Hours' },
-        { label: 'Room Setup Time', value: '8 Minutes' },
-        { label: 'Pacing Control', value: '100% Flexible' },
+        { label: 'Travel Time Saved', value: '2+ Hours' },
+        { label: 'Appointment Pacing', value: 'Unhurried' },
+        { label: 'Your Attention', value: '100% Dedicated' },
       ],
       whatsappMessage:
-        "Hi Dr. Adebayo, I would like to inquire about an executive concierge home/office dental visit.",
-      ctaText: 'Request Executive Visit on WhatsApp',
+        "Hi, I'd like to book a home dental visit. My area is: ",
+      ctaText: 'Book My Home Visit on WhatsApp',
       imageSrc: '/images/executive.jpg',
-      imageAlt: 'Sophisticated executive study suite with leather lounge chair and discreet medical flight case',
+      imageAlt: 'Comfortable executive office study suite prepared for private home dental care',
       patientQuote: {
-        text: 'A routine cleaning used to cost half my working morning. Having Dr. Adebayo arrive at my office study was seamless. Total privacy, zero wasted time.',
-        author: 'Marcus V., Managing Partner',
+        text: 'I used to lose half a day to one appointment. Now it takes an hour and I never leave my house.',
+        author: 'Busy Professional, Metropolitan Area',
       },
     },
     {
       id: 'families',
-      tabLabel: 'Parents & Young Families',
+      tabLabel: 'Parents',
       icon: Users,
-      eyebrow: 'Family Household Concierge',
-      headline: 'The Entire Household Cleaned in One Relaxed Afternoon.',
+      eyebrow: 'Whole Household Care',
+      headline: 'No juggling kids in a waiting room.',
       story:
-        'No car seat struggles, stressful parking decks, or pediatric waiting room meltdowns. Children are treated gently in their familiar home surroundings—often while wearing their pajamas—while parents answer emails in the adjoining room.',
+        'A calm first dental visit in a place your child already feels safe. One visit covers the whole household, with back-to-back family appointments in one easy afternoon.',
       benefits: [
-        'Sequential family checkups in a single convenient visit',
-        'Gentle, tear-free pediatric habituation without clinical intimidation',
-        'Both parents and children completed without leaving home',
+        'Back-to-back family appointments in one visit',
+        'Friendly first visits for children where they feel safe',
+        'No crowded waiting rooms or restless car rides',
       ],
       metrics: [
-        { label: 'Clinic Trips Saved', value: '3 Separate Trips' },
-        { label: 'Child Waiting Stress', value: 'Zero Tears' },
-        { label: 'Family Convenience', value: 'Single Afternoon' },
+        { label: 'Visits Needed', value: '1 Trip' },
+        { label: 'Waiting Stress', value: 'Zero' },
+        { label: 'Household Care', value: 'Complete' },
       ],
       whatsappMessage:
-        "Hi Dr. Adebayo, I'd like to book a sequential concierge home dental visit for my family.",
-      ctaText: 'Request Family Visit on WhatsApp',
+        "Hi, I'd like to book home dental visits for my family.",
+      ctaText: 'Book for My Family on WhatsApp',
       imageSrc: '/images/hero.jpg',
-      imageAlt: 'Quiet residential living room with comfortable seating adapted for family dental care',
+      imageAlt: 'Calm residential living room prepared for relaxed family dental care',
       patientQuote: {
-        text: 'Both kids had their teeth cleaned in their pajamas without a single tear. We will never drag our children to a crowded clinic waiting room again.',
-        author: 'Eleanor M., Mother of Two',
-      },
-    },
-    {
-      id: 'anxious',
-      tabLabel: 'Anxious & Phobic Patients',
-      icon: HeartPulse,
-      eyebrow: 'Trauma-Informed Zero-Anxiety Care',
-      headline: 'Unhurried Gentleness in Your Favorite Armchair.',
-      story:
-        'Past dental trauma can make entering a cold, sterile dental clinic terrifying. At Elfort Dental Clinic, you remain in total control. There are no clinical smells, no loud drills, and no judgmental lectures. We advance only when you signal readiness.',
-      benefits: [
-        'You choose your favorite chair, ambient music, and room lighting',
-        'Immediate break whenever you raise a hand—zero pressure or rushing',
-        'Compassionate, gentle communication with zero judgment of past neglect',
-      ],
-      metrics: [
-        { label: 'Appointment Pacing', value: 'Patient Led' },
-        { label: 'Waiting Room Anxiety', value: 'Eliminated' },
-        { label: 'Judgment Level', value: '100% Compassionate' },
-      ],
-      whatsappMessage:
-        "Hi Dr. Adebayo, I experience dental anxiety and would like to discuss a gentle home visit.",
-      ctaText: 'Discuss Gentle Care on WhatsApp',
-      imageSrc: '/images/hero.jpg',
-      imageAlt: 'Calm, sunlit living room with natural lighting and serene environment for anxious patients',
-      patientQuote: {
-        text: 'I avoided dental care for six years due to extreme phobia. Dr. Adebayo was so kind, patient, and gentle. Being in my own home made all the difference.',
-        author: 'David L., Residential Patient',
+        text: 'Getting everyone to a clinic was always a battle. Having the dentist visit our home made it gentle and relaxed.',
+        author: 'Parent of Two, Metropolitan Area',
       },
     },
     {
       id: 'seniors',
-      tabLabel: 'Seniors & Bedside Care',
+      tabLabel: 'Seniors & Limited Mobility',
       icon: Armchair,
-      eyebrow: 'Dignified Residential & Bedside Care',
-      headline: 'Dignified Oral Health for Loved Ones with Limited Mobility.',
+      eyebrow: 'Dignified Comfort',
+      headline: 'Skip the transport, the stairs and the stress.',
       story:
-        'Transporting an aging parent or relative with mobility challenges, severe arthritis, or cognitive fatigue to a dental office can be physically exhausting. Our mobile equipment is ergonomically engineered to adapt to recliners, sofas, or bedside positions.',
+        'Comfortable, dignified care for relatives who find travel difficult. We bring gentle treatment right to their favorite armchair or bedside, with zero rush.',
       benefits: [
-        'Complete oral hygiene and denture adjustments right at the bedside',
-        'Zero physical transfer trauma into rigid, uncomfortable dental chairs',
-        'Compassionate clinician pacing tailored to physical comfort',
+        'Comfortable, dignified care where they are most at ease',
+        'Skip the transport, the stairs and the stress',
+        'Gentle care tailored to individual comfort and stamina',
       ],
       metrics: [
-        { label: 'Transport Trauma', value: 'Zero Strain' },
-        { label: 'Bedside Adaptability', value: '100% Mobile' },
-        { label: 'Dignity Standard', value: 'Hospital Grade' },
+        { label: 'Transport Stress', value: 'Zero' },
+        { label: 'Comfort Level', value: 'Maximum' },
+        { label: 'Care Standard', value: 'Professional' },
       ],
       whatsappMessage:
-        "Hi Dr. Adebayo, I would like to discuss bedside or mobile dental care for an elderly relative.",
-      ctaText: 'Request Bedside Care on WhatsApp',
+        "Hi, I'd like to ask about home dental care for an elderly relative.",
+      ctaText: 'Ask About Senior Care on WhatsApp',
       imageSrc: '/images/hero.jpg',
-      imageAlt: 'Dignified comfortable home seating setting for bedside and senior dental care',
+      imageAlt: 'Comfortable home setting arranged for senior and limited mobility dental care',
       patientQuote: {
-        text: 'My mother has severe arthritis. Elfort provided dignified, comfortable care right at her bedside. Indispensable for elderly family members.',
-        author: 'Sarah K., Family Caregiver',
+        text: 'Getting my mother to a clinic was a struggle. This made it easy, calm and dignified.',
+        author: 'Family Caregiver, Metropolitan Area',
+      },
+    },
+    {
+      id: 'anxious',
+      tabLabel: 'Dental Anxiety',
+      icon: HeartPulse,
+      eyebrow: 'Calm & Patient Led',
+      headline: 'No clinic sounds, no strangers, no pressure.',
+      story:
+        'Past bad experiences make dental visits daunting. Here, you set the pace, choose your chair and music, and we stop whenever you ask.',
+      benefits: [
+        'No clinic smells, sounds, or waiting-room tension',
+        'Choose your own chair, your music and your pace',
+        'Need a pause? We stop whenever you ask',
+      ],
+      metrics: [
+        { label: 'Pacing Control', value: '100% Yours' },
+        { label: 'Waiting Room', value: 'Eliminated' },
+        { label: 'Approach', value: 'Gentle & Calm' },
+      ],
+      whatsappMessage:
+        "Hi, I have dental anxiety and would like to ask about a gentle home visit.",
+      ctaText: 'Chat With Us on WhatsApp',
+      imageSrc: '/images/hero.jpg',
+      imageAlt: 'Peaceful, light-filled living room providing calm reassurance for dental phobic patients',
+      patientQuote: {
+        text: 'I avoided the dentist for years. Being in my own living room changed everything.',
+        author: 'Private Patient, Metropolitan Area',
       },
     },
   ];
@@ -149,9 +149,9 @@ export const OrganismWhoWeServe: React.FC = () => {
     <section id="personas" className="py-24 md:py-32 bg-secondary/20 border-t border-border relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <MoleculeSectionHeader
-          eyebrow="Interactive Patient Profiles"
-          title="Tailored Care for Discerning Lifestyles"
-          description="Select your patient profile below to preview how our concierge team personalizes the in-home experience for your exact routine."
+          eyebrow="Made for Busy, Private and Nervous People"
+          title="Is Home Dentistry Right for You?"
+          description="Professional dental care, delivered with the calm and discretion of your own space."
           align="center"
         />
 
