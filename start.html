@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your Project | A.U.T.O.MATE</title>
+  <meta name="description" content="Submit your project brief to A.U.T.O.MATE. Complete our 4-step discovery questionnaire to get an accurate quote and milestone timeline.">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Start Your Project | A.U.T.O.MATE">
+  <meta property="og:description" content="Complete our 4-step project discovery brief to get a transparent scope and quote.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+
+  <!-- Google Fonts Preconnect & Inter + JetBrains Mono Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)',
+            surface: 'var(--surface)',
+            ink: 'var(--ink)',
+            'ink-soft': 'var(--ink-soft)',
+            line: 'var(--line)',
+            accent: 'var(--accent)',
+            'accent-deep': 'var(--accent-deep)',
+            success: 'var(--success)',
+            error: 'var(--error)'
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Lightweight Sentry Browser Telemetry -->
+  <script>
+    window.addEventListener('error', function(event) {
+      if (window.console && window.console.warn) {
+        window.console.warn('[Telemetry Handled Exception]:', event.message);
+      }
+    });
+  </script>
+
+  <!-- Design System CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-white text-slate-900 selection:bg-cyan-100 selection:text-cyan-900 flex flex-col min-h-screen">
+
+  <!-- Reusable SVG Symbols Definition -->
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="automate-logo" viewBox="0 0 40 40">
+      <rect width="40" height="40" rx="10" fill="#0F172A"/>
+      <path d="M12 28L12 14L20 14" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 21L19 21" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M22 14L30 14M22 21L28 21M22 28L30 28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M22 14L22 28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="20" cy="14" r="2" fill="#06B6D4"/>
+      <circle cx="19" cy="21" r="2" fill="#06B6D4"/>
+      <circle cx="12" cy="28" r="2" fill="#06B6D4"/>
+    </symbol>
+  </svg>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       Navigation Bar (Matches index.html with links pointing back to sections)
+       ======================================================================== -->
+  <header id="main-nav" class="sticky top-0 z-50 bg-white/85 backdrop-blur-md transition-all duration-200">
+    <div class="max-w-[1200px] mx-auto px-6 h-[72px] flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg p-1" aria-label="A.U.T.O.MATE Home">
+        <svg class="w-8 h-8 flex-shrink-0 transition-transform duration-200 group-hover:scale-105" aria-hidden="true">
+          <use href="#automate-logo"/>
+        </svg>
+        <span class="font-extrabold text-xl tracking-tight text-slate-900">
+          A<span class="text-cyan-500">.</span>U<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>O<span class="text-cyan-500">.</span>MATE
+        </span>
+      </a>
+
+      <!-- Desktop Links Pointing to Home Sections -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+        <a href="index.html#services" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Services</a>
+        <a href="index.html#process" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Process</a>
+        <a href="index.html#stories" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Success Stories</a>
+        <a href="index.html#contact" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Return to Home Link -->
+      <div class="hidden md:flex items-center">
+        <a href="index.html" class="text-sm font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-1.5 py-2 px-3 rounded-lg hover:bg-slate-100 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button id="nav-toggle" class="md:hidden p-2 text-slate-700 hover:text-slate-900 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Panel -->
+    <div id="nav-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-6 py-6 shadow-xl" tabindex="-1">
+      <nav class="flex flex-col gap-4" aria-label="Mobile navigation">
+        <a href="index.html#services" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Services</a>
+        <a href="index.html#process" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Process</a>
+        <a href="index.html#stories" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Success Stories</a>
+        <a href="index.html#contact" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Contact</a>
+        <div class="pt-4 border-t border-slate-100">
+          <a href="index.html" class="btn-secondary w-full text-center">
+            &larr; Back to Home
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Sticky Step Progress Bar Indicator (Tracks 4 Form Sections)
+       ======================================================================== -->
+  <div class="sticky top-[72px] z-40 bg-white/95 backdrop-blur-sm border-b border-slate-200 py-3 shadow-xs">
+    <div class="max-w-[760px] mx-auto px-6">
+      <div class="flex items-center justify-between text-xs font-mono-code mb-1.5">
+        <span id="form-step-text" class="text-cyan-800 font-bold uppercase tracking-wider">
+          Step 1 of 4: About you and your business
+        </span>
+        <span class="text-slate-400">Project Brief</span>
+      </div>
+      <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+        <div id="form-progress-fill" class="bg-cyan-500 h-full w-1/4 transition-all duration-300 ease-out"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Main Content Container
+       ======================================================================== -->
+  <main id="main-content" class="flex-grow py-12 md:py-16">
+    <div class="max-w-[760px] mx-auto px-6">
+      
+      <!-- Top Navigation & Introduction -->
+      <div class="mb-10 space-y-4">
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-800 hover:text-cyan-900 transition-colors">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5" aria-hidden="true"></i>
+          <span>Back to home</span>
+        </a>
+        <div class="space-y-2">
+          <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold block">
+            Project brief
+          </span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Tell us about your project
+          </h1>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            The more detail you give, the faster and more accurate your quote and build will be. Most people finish in 5 to 10 minutes.
+          </p>
+        </div>
+
+        <!-- Draft Restoration Notification Banner -->
+        <div id="draft-restore-banner" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center justify-between text-xs text-emerald-800">
+          <div class="flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0" aria-hidden="true"></i>
+            <span>We restored your saved draft from your previous session.</span>
+          </div>
+          <button id="clear-draft-btn" type="button" class="underline hover:text-emerald-950 font-semibold cursor-pointer">
+            Clear draft
+          </button>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           Interactive Brief Form View
+           ====================================================================== -->
+      <div id="brief-form-container">
+        <form id="project-brief-form" novalidate class="space-y-12">
+          
+          <!-- Hidden Anti-Bot Honeypot Field -->
+          <div class="opacity-0 absolute -z-50 w-0 h-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <label for="website_url_confirm">Do not fill this out if human</label>
+            <input type="text" id="website_url_confirm" name="website_url_confirm" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- ==================================================================
+               Section 1: About you and your business
+               ================================================================== -->
+          <fieldset class="form-fieldset-section bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6" data-step="1">
+            <legend class="text-xl font-bold text-slate-900 px-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-cyan-400 font-mono-code text-xs flex items-center justify-center">1</span>
+              About you and your business
+            </legend>
+
+            <!-- Full Name -->
+            <div class="space-y-2">
+              <label for="full_name" class="block text-sm font-semibold text-slate-900">
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="full_name" name="full_name" required autocomplete="name"
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              <p id="full_name-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Business Name -->
+            <div class="space-y-2">
+              <label for="business_name" class="block text-sm font-semibold text-slate-900">
+                Business Name <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="business_name" name="business_name" required autocomplete="organization"
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              <p id="business_name-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- One-sentence Description (Max 160 Chars with Counter) -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <label for="business_desc" class="block text-sm font-semibold text-slate-900">
+                  One-sentence Description <span class="text-red-500">*</span>
+                </label>
+                <span id="desc-char-counter" class="text-xs font-mono-code text-slate-400">0 / 160</span>
+              </div>
+              <input type="text" id="business_desc" name="business_desc" required maxlength="160"
+                     data-counter-target="desc-char-counter"
+                     placeholder="e.g. We provide cold-storage logistics for fresh agricultural produce."
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              <p class="text-xs text-slate-500">What does your business do, in one clear sentence?</p>
+              <p id="business_desc-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Two-Column: Email & Phone -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-semibold text-slate-900">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                       placeholder="name@company.com"
+                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+                <p id="email-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+              </div>
+
+              <div class="space-y-2">
+                <label for="phone" class="block text-sm font-semibold text-slate-900">
+                  WhatsApp / Phone <span class="text-red-500">*</span>
+                </label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                       placeholder="+234 800 000 0000"
+                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+                <p class="text-xs text-slate-500">Include your country code (e.g. +234, +1...)</p>
+                <p id="phone-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- ==================================================================
+               Section 2: Audience and goals
+               ================================================================== -->
+          <fieldset class="form-fieldset-section bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6" data-step="2">
+            <legend class="text-xl font-bold text-slate-900 px-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-cyan-400 font-mono-code text-xs flex items-center justify-center">2</span>
+              Audience and goals
+            </legend>
+
+            <!-- The Audience -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <label for="audience" class="block text-sm font-semibold text-slate-900">
+                  The Audience <span class="text-red-500">*</span>
+                </label>
+                <span id="audience-counter" class="text-xs font-mono-code text-slate-400">0 / 1000</span>
+              </div>
+              <textarea id="audience" name="audience" required rows="3" maxlength="1000"
+                        data-counter-target="audience-counter"
+                        placeholder="Who is arriving on the platform, and what are their specific needs or frustrations?"
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all"></textarea>
+              <p id="audience-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- The Primary Problem Solved -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <label for="problem_solved" class="block text-sm font-semibold text-slate-900">
+                  The Primary Problem Solved <span class="text-red-500">*</span>
+                </label>
+                <span id="problem-counter" class="text-xs font-mono-code text-slate-400">0 / 1000</span>
+              </div>
+              <textarea id="problem_solved" name="problem_solved" required rows="3" maxlength="1000"
+                        data-counter-target="problem-counter"
+                        placeholder="What exact operational or sales bottleneck should this build solve for your team or customers?"
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all"></textarea>
+              <p id="problem_solved-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Main Action Driven -->
+            <div class="space-y-2">
+              <label for="main_action" class="block text-sm font-semibold text-slate-900">
+                Main Action the Site Should Drive <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="main_action" name="main_action" required
+                     placeholder="e.g. Book an initial call, buy direct from store, request an enterprise quote"
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              <p id="main_action-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Project Type Selection (Radio Cards) -->
+            <div class="space-y-3">
+              <label class="block text-sm font-semibold text-slate-900">
+                Project Type <span class="text-red-500">*</span>
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                
+                <div>
+                  <input type="radio" id="type_website" name="project_type" value="Standard Website" class="sr-only form-card-radio" required checked>
+                  <label for="type_website" class="block p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer transition-all hover:border-slate-300">
+                    <span class="block text-sm font-bold text-slate-900">Standard Website</span>
+                    <span class="block text-xs text-slate-500 mt-1">Marketing or brand site to explain offerings and capture leads</span>
+                  </label>
+                </div>
+
+                <div>
+                  <input type="radio" id="type_ecommerce" name="project_type" value="E-commerce Platform" class="sr-only form-card-radio">
+                  <label for="type_ecommerce" class="block p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer transition-all hover:border-slate-300">
+                    <span class="block text-sm font-bold text-slate-900">E-commerce Platform</span>
+                    <span class="block text-xs text-slate-500 mt-1">Online store with payment gateway and inventory tracking</span>
+                  </label>
+                </div>
+
+                <div>
+                  <input type="radio" id="type_webapp" name="project_type" value="Web Application" class="sr-only form-card-radio">
+                  <label for="type_webapp" class="block p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer transition-all hover:border-slate-300">
+                    <span class="block text-sm font-bold text-slate-900">Web Application</span>
+                    <span class="block text-xs text-slate-500 mt-1">Interactive software, portals, booking systems, or member dashboards</span>
+                  </label>
+                </div>
+
+                <div>
+                  <input type="radio" id="type_software" name="project_type" value="Custom Software" class="sr-only form-card-radio">
+                  <label for="type_software" class="block p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer transition-all hover:border-slate-300">
+                    <span class="block text-sm font-bold text-slate-900">Custom Software</span>
+                    <span class="block text-xs text-slate-500 mt-1">Specialized workflow automation or bespoke internal software</span>
+                  </label>
+                </div>
+
+              </div>
+              <p id="project_type-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+          </fieldset>
+
+          <!-- ==================================================================
+               Section 3: Look, feel, and inspiration
+               ================================================================== -->
+          <fieldset class="form-fieldset-section bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6" data-step="3">
+            <legend class="text-xl font-bold text-slate-900 px-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-cyan-400 font-mono-code text-xs flex items-center justify-center">3</span>
+              Look, feel, and inspiration
+            </legend>
+
+            <!-- Existing Branding -->
+            <div class="space-y-2">
+              <label for="existing_branding" class="block text-sm font-semibold text-slate-900">
+                Existing Branding
+              </label>
+              <input type="text" id="existing_branding" name="existing_branding"
+                     placeholder="e.g. We have hex codes (#112233) and vector logo, or write 'none yet' if starting fresh"
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              <p class="text-xs text-slate-500">Colors, fonts, or logo notes. Write "none yet" if you need visual design from scratch.</p>
+            </div>
+
+            <!-- Three Liked Websites (Structured Rows) -->
+            <div class="space-y-3">
+              <label class="block text-sm font-semibold text-slate-900">
+                Websites You Like <span class="text-red-500">*</span>
+              </label>
+              <p class="text-xs text-slate-500">Provide at least 1 URL of an existing website whose design, structure, or speed you admire.</p>
+              
+              <div class="space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-6">
+                    <input type="url" id="liked_site_1_url" name="liked_site_1_url" required
+                           placeholder="https://example.com"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                  <div class="sm:col-span-6">
+                    <input type="text" name="liked_site_1_reason"
+                           placeholder="What do you like about it? (e.g. speed, clean layout)"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                </div>
+                <p id="liked_site_1_url-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-6">
+                    <input type="url" name="liked_site_2_url" placeholder="https://second-example.com (optional)"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                  <div class="sm:col-span-6">
+                    <input type="text" name="liked_site_2_reason" placeholder="What do you like about it?"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-6">
+                    <input type="url" name="liked_site_3_url" placeholder="https://third-example.com (optional)"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                  <div class="sm:col-span-6">
+                    <input type="text" name="liked_site_3_reason" placeholder="What do you like about it?"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Three Disliked Websites (Optional Structured Rows) -->
+            <div class="space-y-3 pt-2">
+              <label class="block text-sm font-semibold text-slate-900">
+                Websites You Dislike (Optional)
+              </label>
+              <p class="text-xs text-slate-500">Share any sites that feel cluttered, slow, or frustrating to guide what we avoid.</p>
+              
+              <div class="space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-6">
+                    <input type="url" name="disliked_site_1_url" placeholder="https://disliked-site.com"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                  <div class="sm:col-span-6">
+                    <input type="text" name="disliked_site_1_reason" placeholder="What put you off? (e.g. cluttered navigation)"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-6">
+                    <input type="url" name="disliked_site_2_url" placeholder="https://disliked-site-2.com"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                  <div class="sm:col-span-6">
+                    <input type="text" name="disliked_site_2_reason" placeholder="What put you off?"
+                           class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tone Words with Clickable Suggestion Chips -->
+            <div class="space-y-3 pt-2">
+              <label for="tone_words" class="block text-sm font-semibold text-slate-900">
+                Tone Words <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="tone_words" name="tone_words" required
+                     placeholder="e.g. Authoritative, minimalist, warm, high-tech"
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              
+              <!-- Clickable Suggestion Chips -->
+              <div class="flex flex-wrap items-center gap-2 pt-1">
+                <span class="text-xs text-slate-500">Click to append:</span>
+                <button type="button" class="tone-suggestion-chip px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-medium text-slate-700 transition-colors" data-word="Professional">
+                  Professional
+                </button>
+                <button type="button" class="tone-suggestion-chip px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-medium text-slate-700 transition-colors" data-word="Friendly">
+                  Friendly
+                </button>
+                <button type="button" class="tone-suggestion-chip px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-medium text-slate-700 transition-colors" data-word="Bold">
+                  Bold
+                </button>
+                <button type="button" class="tone-suggestion-chip px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-medium text-slate-700 transition-colors" data-word="Minimal">
+                  Minimal
+                </button>
+              </div>
+              <p id="tone_words-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+          </fieldset>
+
+          <!-- ==================================================================
+               Section 4: Scope, features, and assets
+               ================================================================== -->
+          <fieldset class="form-fieldset-section bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-8" data-step="4">
+            <legend class="text-xl font-bold text-slate-900 px-2 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-cyan-400 font-mono-code text-xs flex items-center justify-center">4</span>
+              Scope, features, and assets
+            </legend>
+
+            <!-- Pages Required Checkboxes -->
+            <div class="space-y-3">
+              <label class="block text-sm font-semibold text-slate-900">
+                Pages Required <span class="text-red-500">*</span>
+              </label>
+              <p class="text-xs text-slate-500">Select all pages needed for your launch version:</p>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Homepage" checked class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Homepage</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="About Us" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>About Us</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Services / Offerings" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Services</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Pricing" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Pricing</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Portfolio / Case Studies" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Portfolio</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Contact" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Contact</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Blog / News" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Blog / Articles</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="FAQ" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>FAQ</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="pages_required" value="Login / Account Portal" class="rounded text-cyan-600 focus:ring-cyan-500">
+                  <span>Login / Account</span>
+                </label>
+              </div>
+
+              <!-- Other Pages Custom Input -->
+              <div class="pt-2">
+                <input type="text" name="pages_other" placeholder="Other specific pages needed (comma separated)..."
+                       class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+              </div>
+              <p id="pages_required-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Special Features Needed -->
+            <div class="space-y-3 pt-2">
+              <label class="block text-sm font-semibold text-slate-900">
+                Special Features Needed (Optional)
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Booking calendar" class="rounded text-cyan-600">
+                  <span>Booking calendar</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Payment gateway" class="rounded text-cyan-600">
+                  <span>Payment gateway</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Custom forms" class="rounded text-cyan-600">
+                  <span>Custom forms</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Blog / CMS" class="rounded text-cyan-600">
+                  <span>Blog / CMS</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="User accounts" class="rounded text-cyan-600">
+                  <span>User accounts</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Admin dashboard" class="rounded text-cyan-600">
+                  <span>Admin dashboard</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="WhatsApp integration" class="rounded text-cyan-600">
+                  <span>WhatsApp link</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Live chat" class="rounded text-cyan-600">
+                  <span>Live chat</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-slate-50 cursor-pointer text-sm text-slate-800 hover:bg-slate-100">
+                  <input type="checkbox" name="features" value="Multi-language" class="rounded text-cyan-600">
+                  <span>Multi-language</span>
+                </label>
+              </div>
+              <div class="pt-2">
+                <input type="text" name="features_other" placeholder="Other custom integrations or features..."
+                       class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white">
+              </div>
+            </div>
+
+            <!-- Two-Column: Budget Range & Timeline -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div class="space-y-2">
+                <label for="budget_range" class="block text-sm font-semibold text-slate-900">
+                  Budget Range <span class="text-red-500">*</span>
+                </label>
+                <!-- [YOUR INPUT: adjust budget ranges] -->
+                <select id="budget_range" name="budget_range" required
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white transition-all">
+                  <option value="" disabled selected>Select your budget range...</option>
+                  <option value="₦100,000 – ₦250,000">&#8358;100,000 &ndash; &#8358;250,000 (Standard Website)</option>
+                  <option value="₦250,000 – ₦500,000">&#8358;250,000 &ndash; &#8358;500,000 (E-commerce / Web App MVP)</option>
+                  <option value="₦500,000 – ₦1,000,000">&#8358;500,000 &ndash; &#8358;1,000,000 (Web App / Scale)</option>
+                  <option value="₦1,000,000+">&#8358;1,000,000+ (Custom Software &amp; Enterprise)</option>
+                </select>
+                <p id="budget_range-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+              </div>
+
+              <div class="space-y-2">
+                <label for="timeline" class="block text-sm font-semibold text-slate-900">
+                  Ideal Timeline (Optional)
+                </label>
+                <select id="timeline" name="timeline"
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:bg-white transition-all">
+                  <option value="Flexible">Flexible / No strict deadline</option>
+                  <option value="ASAP">ASAP (Immediate start)</option>
+                  <option value="2–4 weeks">2 &ndash; 4 weeks</option>
+                  <option value="1–2 months">1 &ndash; 2 months</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Asset Upload Link (Google Drive Requirement) -->
+            <div class="space-y-2 pt-2">
+              <label for="asset_link" class="block text-sm font-semibold text-slate-900">
+                Asset Upload Link <span class="text-red-500">*</span>
+              </label>
+              <input type="url" id="asset_link" name="asset_link" required
+                     placeholder="https://drive.google.com/drive/folders/..."
+                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all">
+              
+              <!-- Verbatim Helper Text -->
+              <p class="text-xs text-slate-600 font-medium">
+                Provide a Google Drive link containing your logo, brand assets, and any images your website will need.
+              </p>
+
+              <!-- Soft Warning for non-Drive links -->
+              <p id="asset_link-warning" class="hidden text-xs text-amber-600 font-medium flex items-center gap-1">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                <span>Note: A Google Drive folder is recommended to avoid download permission delays.</span>
+              </p>
+              <p id="asset_link-error" class="hidden text-xs text-red-600 font-medium" role="alert"></p>
+
+              <!-- Collapsible 4-Step Drive Sharing Guide -->
+              <details class="text-xs text-slate-500 pt-2 cursor-pointer group">
+                <summary class="font-semibold text-cyan-800 hover:text-cyan-900 flex items-center gap-1 select-none">
+                  <i data-lucide="help-circle" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                  <span>How to share a Google Drive folder (4 steps)</span>
+                </summary>
+                <div class="mt-2.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5 text-slate-700">
+                  <p>1. Open Google Drive and create a new folder named with your business name.</p>
+                  <p>2. Upload your logo files, images, and any project text documents.</p>
+                  <p>3. Right-click the folder &gt; select <strong>Share</strong> &gt; set General Access to <strong>"Anyone with the link can view"</strong>.</p>
+                  <p>4. Click <strong>Copy link</strong> and paste it into the field above.</p>
+                </div>
+              </details>
+            </div>
+
+          </fieldset>
+
+          <!-- ==================================================================
+               Final Block & Consent
+               ================================================================== -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+            
+            <!-- Anything Else Textarea -->
+            <div class="space-y-2">
+              <label for="extra_notes" class="block text-sm font-semibold text-slate-900">
+                Anything else we should know? (Optional)
+              </label>
+              <textarea id="extra_notes" name="extra_notes" rows="3" maxlength="1000"
+                        placeholder="Any special operational notes, third-party APIs, or deadlines..."
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-base text-slate-900 placeholder-slate-400 focus:bg-white transition-all"></textarea>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="pt-2">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" id="consent" name="consent" required class="mt-1 rounded text-cyan-600 focus:ring-cyan-500">
+                <span class="text-sm text-slate-700">
+                  I agree that A.U.T.O.MATE may contact me about this project via email or phone. <span class="text-red-500">*</span>
+                </span>
+              </label>
+              <p id="consent-error" class="hidden text-xs text-red-600 font-medium mt-1" role="alert"></p>
+            </div>
+
+            <!-- Form Error Summary Box -->
+            <div id="form-error-summary" class="hidden p-4 rounded-xl bg-red-50 border border-red-200 text-sm font-semibold text-red-700" role="alert"></div>
+
+            <!-- Full Width Submit Button -->
+            <div class="pt-4">
+              <button type="submit" id="brief-submit-btn" class="btn-primary w-full text-base font-bold h-14">
+                <span>Submit Project Brief</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-1 text-cyan-400" aria-hidden="true"></i>
+              </button>
+              <p class="text-center text-xs text-slate-400 mt-3 font-mono-code">
+                Encrypted &bull; Direct Studio Review &bull; Response within 24h
+              </p>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+      <!-- ======================================================================
+           Success State Container (Rendered on Valid Submission)
+           ====================================================================== -->
+      <div id="brief-success-container" class="hidden bg-white border border-slate-200 rounded-2xl p-8 sm:p-12 shadow-sm text-center space-y-8">
+        
+        <!-- Animated Drawing Checkmark SVG -->
+        <div class="w-20 h-20 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 mx-auto flex items-center justify-center">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+
+        <!-- Success Heading & Client Confirmation -->
+        <div class="space-y-3 max-w-[540px] mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Brief received.
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            Thanks, <span id="success-client-name" class="font-bold text-slate-900">there</span>. We will review your project brief and reply within 24 hours on the email or WhatsApp number you provided.
+          </p>
+        </div>
+
+        <!-- What Happens Next (Mirrors the 3-Step Process) -->
+        <div class="text-left bg-slate-50 border border-slate-200 rounded-xl p-6 max-w-[540px] mx-auto space-y-3">
+          <span class="text-xs font-mono-code uppercase tracking-wider text-cyan-800 font-bold block">
+            What happens next:
+          </span>
+          <div class="space-y-2 text-sm text-slate-700">
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white text-[0.6875rem] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</span>
+              <span><strong>Scope &amp; Discovery Review:</strong> We analyze your requirements and Drive assets.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white text-[0.6875rem] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</span>
+              <span><strong>Milestone Proposal:</strong> We provide a transparent scope, schedule, and fixed quote.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white text-[0.6875rem] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</span>
+              <span><strong>Kickoff:</strong> Once approved, we begin sprint development with live previews.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-[480px] mx-auto">
+          <a href="index.html" class="btn-primary w-full sm:w-auto text-sm">
+            Back to home
+          </a>
+          <button id="copy-brief-summary-btn" type="button" class="btn-secondary w-full sm:w-auto text-sm">
+            <i data-lucide="copy" class="w-4 h-4 mr-1 text-slate-600" aria-hidden="true"></i>
+            <span>Copy my brief</span>
+          </button>
+          <button type="button" onclick="location.reload()" class="text-xs text-slate-500 hover:text-slate-800 underline py-2">
+            Submit another brief
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Global Footer
+       ======================================================================== -->
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center justify-between">
+      
+      <!-- Brand & Tagline -->
+      <div class="md:col-span-6 space-y-2">
+        <a href="index.html" class="flex items-center gap-3">
+          <svg class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+            <use href="#automate-logo"/>
+          </svg>
+          <span class="font-extrabold text-lg text-slate-900 tracking-tight">
+            A<span class="text-cyan-500">.</span>U<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>O<span class="text-cyan-500">.</span>M<span class="text-cyan-500">.</span>A<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>E<span class="text-cyan-500">.</span>
+          </span>
+        </a>
+        <p class="text-xs text-slate-500 max-w-[380px]">
+          Digital Precision. Human Connection. Engineered for Scalable Impact.
+        </p>
+      </div>
+
+      <!-- Navigation & Social Links -->
+      <div class="md:col-span-6 flex flex-wrap md:justify-end items-center gap-6 text-xs text-slate-600">
+        <a href="index.html#services" class="hover:text-slate-900 transition-colors">Services</a>
+        <a href="index.html#process" class="hover:text-slate-900 transition-colors">Process</a>
+        <a href="index.html#stories" class="hover:text-slate-900 transition-colors">Stories</a>
+        <a href="index.html#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
+        <span class="text-slate-300">|</span>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900">Twitter/X</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900">LinkedIn</a>
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="md:col-span-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between text-xs text-slate-400">
+        <span>&copy; <span class="current-year">2026</span> A.U.T.O.MATE. All rights reserved.</span>
+        <span class="mt-2 sm:mt-0">Handcrafted with pure HTML, Tailwind CSS, &amp; vanilla JS.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Controller -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize Lucide Icons after DOM ready
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.lucide && window.lucide.createIcons) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

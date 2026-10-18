@@ -1,0 +1,17 @@
+{
+  "name": "automate",
+  "version": "1.0.0",
+  "description": "A.U.T.O.MATE — High-converting website and project brief registration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 8080 .",
+    "start": "npx serve -l 8080 ."
+  },
+  "keywords": [
+    "automate",
+    "digital-studio",
+    "landing-page"
+  ],
+  "author": "A.U.T.O.MATE",
+  "license": "ISC"
+}

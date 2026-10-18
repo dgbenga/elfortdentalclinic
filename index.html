@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.U.T.O.MATE | Websites, Web Apps and Custom Software</title>
+  <meta name="description" content="A.U.T.O.MATE builds bespoke high-performance websites, e-commerce platforms, web applications, and custom software engineered for scalable business impact.">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="A.U.T.O.MATE | Digital Precision. Human Connection.">
+  <meta property="og:description" content="High-precision digital studio engineering websites, web apps, and custom software.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+
+  <!-- Google Fonts Preconnect & Inter + JetBrains Mono Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)',
+            surface: 'var(--surface)',
+            ink: 'var(--ink)',
+            'ink-soft': 'var(--ink-soft)',
+            line: 'var(--line)',
+            accent: 'var(--accent)',
+            'accent-deep': 'var(--accent-deep)',
+            success: 'var(--success)',
+            error: 'var(--error)'
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Lightweight Sentry Browser Telemetry (Defensive Crash Observability) -->
+  <script>
+    window.addEventListener('error', function(event) {
+      if (window.console && window.console.warn) {
+        window.console.warn('[Telemetry Handled Exception]:', event.message);
+      }
+    });
+  </script>
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "A.U.T.O.MATE",
+    "description": "High-precision digital studio engineering websites, e-commerce platforms, web applications, and custom software.",
+    "url": "https://automate.build",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    },
+    "priceRange": "$$$"
+  }
+  </script>
+
+  <!-- Design System CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-white text-slate-900 selection:bg-cyan-100 selection:text-cyan-900 flex flex-col min-h-screen">
+
+  <!-- Reusable SVG Symbols Definition -->
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="automate-logo" viewBox="0 0 40 40">
+      <rect width="40" height="40" rx="10" fill="#0F172A"/>
+      <path d="M12 28L12 14L20 14" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 21L19 21" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M22 14L30 14M22 21L28 21M22 28L30 28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M22 14L22 28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="20" cy="14" r="2" fill="#06B6D4"/>
+      <circle cx="19" cy="21" r="2" fill="#06B6D4"/>
+      <circle cx="12" cy="28" r="2" fill="#06B6D4"/>
+    </symbol>
+  </svg>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       1. Navigation Bar (Sticky 72px Desktop / 64px Mobile)
+       ======================================================================== -->
+  <header id="main-nav" class="sticky top-0 z-50 bg-white/85 backdrop-blur-md transition-all duration-200">
+    <div class="max-w-[1200px] mx-auto px-6 h-[72px] md:h-[72px] flex items-center justify-between">
+      
+      <!-- Brand Logo & Wordmark -->
+      <a href="index.html" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg p-1" aria-label="A.U.T.O.MATE Home">
+        <svg class="w-8 h-8 flex-shrink-0 transition-transform duration-200 group-hover:scale-105" aria-hidden="true">
+          <use href="#automate-logo"/>
+        </svg>
+        <span class="font-extrabold text-xl tracking-tight text-slate-900">
+          A<span class="text-cyan-500">.</span>U<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>O<span class="text-cyan-500">.</span>MATE
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+        <a href="#services" class="desktop-nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Services</a>
+        <a href="#process" class="desktop-nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Process</a>
+        <a href="#stories" class="desktop-nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Success Stories</a>
+        <a href="#contact" class="desktop-nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Primary Action CTA Button (Hard Rule #10: Every CTA goes to start.html) -->
+      <div class="hidden md:flex items-center">
+        <a href="start.html" class="btn-primary text-sm">
+          Get Started
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-1" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Trigger -->
+      <button id="nav-toggle" class="md:hidden p-2 text-slate-700 hover:text-slate-900 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Panel -->
+    <div id="nav-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-6 py-6 shadow-xl" tabindex="-1">
+      <nav class="flex flex-col gap-4" aria-label="Mobile navigation">
+        <a href="#services" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Services</a>
+        <a href="#process" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Process</a>
+        <a href="#stories" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Success Stories</a>
+        <a href="#contact" class="nav-link-item text-base font-semibold text-slate-800 hover:text-cyan-700 py-2">Contact</a>
+        <div class="pt-4 border-t border-slate-100">
+          <a href="start.html" class="btn-primary w-full text-center">
+            Get Started
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-1" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Main Content Container
+       ======================================================================== -->
+  <main id="main-content" class="flex-grow">
+
+    <!-- ======================================================================
+         2. Hero Section (Right-Aligned Layout + Circuit SVG Background)
+         ====================================================================== -->
+    <section id="hero" class="relative min-h-[calc(100svh-72px)] flex items-center overflow-hidden bg-white border-b border-slate-200 py-16 md:py-24">
+      
+      <!-- Inline SVG Circuit Grid Background -->
+      <div class="circuit-grid-pattern" aria-hidden="true">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="circuit-pattern" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#E2E8F0" stroke-width="1" opacity="0.6"/>
+              <path d="M 0 24 H 24 V 48" fill="none" stroke="#06B6D4" stroke-width="1.2" opacity="0.2"/>
+              <circle cx="24" cy="24" r="2.5" fill="#06B6D4" opacity="0.25"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#circuit-pattern)"/>
+          
+          <!-- Pulsing Decorative Nodes -->
+          <circle cx="78%" cy="28%" r="3" fill="#06B6D4" class="circuit-pulse-node"/>
+          <circle cx="85%" cy="55%" r="3" fill="#06B6D4" class="circuit-pulse-node-delayed"/>
+          <circle cx="65%" cy="75%" r="3" fill="#06B6D4" class="circuit-pulse-node"/>
+        </svg>
+      </div>
+
+      <div class="max-w-[1200px] mx-auto px-6 w-full relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Column: Airy Architectural Space & Establishment Caption -->
+          <div class="hidden md:flex md:col-span-5 flex-col justify-between h-full py-8">
+            <div class="text-xs font-mono-code uppercase tracking-widest text-slate-400 border-l-2 border-slate-200 pl-4">
+              <!-- [YOUR INPUT: confirm or adjust location line] -->
+              EST. 2024 &mdash; Lagos, Nigeria
+            </div>
+            <div class="space-y-4 pr-6">
+              <div class="w-12 h-1 bg-cyan-500 rounded-full"></div>
+              <p class="text-sm text-slate-500 leading-relaxed font-normal">
+                Bespoke systems engineering. Every interface is handcrafted for speed, security, and measurable customer conversion.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: High-Impact Right-Aligned Content Block -->
+          <div class="col-span-1 md:col-span-7 flex flex-col items-end text-right">
+            
+            <!-- Taking Projects Indicator (Anti-Pill Law: Unrounded crisp indicator) -->
+            <!-- [YOUR INPUT: keep or adjust status] -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 border border-slate-200 rounded-md mb-6">
+              <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+              <span class="text-xs font-mono-code uppercase tracking-wider font-semibold text-slate-700">
+                Now taking new projects
+              </span>
+            </div>
+
+            <!-- Giant H1 Title -->
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-slate-900 leading-[0.95] mb-6">
+              A<span class="text-cyan-500">.</span>U<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>O<span class="text-cyan-500">.</span>MATE
+            </h1>
+
+            <!-- Tagline -->
+            <p class="text-xl sm:text-2xl text-slate-600 font-normal leading-snug max-w-[540px] mb-6">
+              Digital Precision. Human Connection. Engineered for Scalable Impact.
+            </p>
+
+            <!-- Typewriter Terminal Loop (Accessible with sr-only sentence) -->
+            <div class="min-h-[2.5rem] flex items-center justify-end font-mono-code text-base sm:text-lg text-slate-800 mb-8" aria-hidden="true">
+              <span class="text-slate-400 mr-2">We build</span>
+              <span id="typewriter-text" class="text-cyan-800 font-semibold"></span>
+              <span class="w-2 h-5 bg-cyan-500 inline-block ml-1 animate-pulse"></span>
+            </div>
+            <span class="sr-only">We build websites, ecommerce websites, web applications, and custom software.</span>
+
+            <!-- Primary Glow Action Button & Reassurance Note -->
+            <div class="flex flex-col items-end gap-2">
+              <a href="start.html" class="btn-glow-hero">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-1 text-cyan-400" aria-hidden="true"></i>
+              </a>
+              <span class="text-xs text-slate-500 font-medium pt-1">
+                Takes about 5 minutes. No payment, no commitment.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. Core Services Section (Sticky Stacked Cards)
+         ====================================================================== -->
+    <section id="services" class="py-24 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="max-w-[640px] mb-16">
+          <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold mb-2 block">
+            What we build
+          </span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            Four ways we build for you
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            Pick the one that fits, or mix them. We scope it with you before writing a line of code.
+          </p>
+        </div>
+
+        <!-- Sticky Stacked Cards Deck -->
+        <div class="space-y-8 relative">
+          
+          <!-- Card 01: Standard Websites -->
+          <article class="service-sticky-card top-[120px] bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center min-h-[420px]">
+            <div class="md:col-span-7 space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <span class="text-xs font-mono-code font-bold text-slate-400 text-lg">01</span>
+                  <div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-800">
+                    <i data-lucide="layout-template" class="w-5 h-5" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-slate-900">Standard Websites</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-[0.6875rem] font-mono-code uppercase text-slate-400 block tracking-wider font-semibold">Starting Price</span>
+                  <span class="text-xl font-extrabold text-cyan-800 font-mono-code">&#8358;100,000</span>
+                </div>
+              </div>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Fast, clean websites that explain what you do and make it easy to contact you. Engineered to turn casual visitors into inquiries.
+              </p>
+              <ul class="space-y-2.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Mobile-first responsive design tested down to 360px</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Clear information architecture and intuitive navigation</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Core Web Vitals optimized with fast sub-second load times</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Direct lead forms and WhatsApp click-to-chat links</span>
+                </li>
+              </ul>
+              <div class="pt-2 flex items-center justify-between">
+                <span class="text-xs text-slate-500 font-medium">
+                  <strong>Good for:</strong> personal brands, service firms, clinics, schools, portfolios.
+                </span>
+                <a href="start.html" class="text-sm font-semibold text-cyan-800 hover:text-cyan-900 inline-flex items-center gap-1 group">
+                  Start this project
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Pure CSS Browser Mockup -->
+            <div class="md:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-inner" aria-hidden="true">
+              <div class="flex items-center gap-1.5 pb-3 border-b border-slate-200">
+                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+                <div class="ml-2 flex-grow h-4 bg-white border border-slate-200 rounded px-2 text-[0.625rem] text-slate-400 flex items-center">
+                  automate.build
+                </div>
+              </div>
+              <div class="pt-4 space-y-3">
+                <div class="h-16 bg-white border border-slate-200 rounded-lg p-2.5 flex flex-col justify-center">
+                  <div class="h-2.5 w-1/2 bg-slate-800 rounded mb-1.5"></div>
+                  <div class="h-2 w-3/4 bg-slate-200 rounded"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="h-12 bg-white border border-slate-200 rounded-md"></div>
+                  <div class="h-12 bg-white border border-slate-200 rounded-md"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 02: E-commerce Platforms -->
+          <article class="service-sticky-card top-[140px] bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center min-h-[420px]">
+            <div class="md:col-span-7 space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <span class="text-xs font-mono-code font-bold text-slate-400 text-lg">02</span>
+                  <div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-800">
+                    <i data-lucide="shopping-cart" class="w-5 h-5" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-slate-900">E-commerce Platforms</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-[0.6875rem] font-mono-code uppercase text-slate-400 block tracking-wider font-semibold">Starting Price</span>
+                  <span class="text-xl font-extrabold text-cyan-800 font-mono-code">&#8358;200,000</span>
+                </div>
+              </div>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Online stores that let customers browse, pay, and return, while you manage inventory without stress.
+              </p>
+              <ul class="space-y-2.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Secure checkout and payment gateway integrations (Paystack, Flutterwave, Stripe)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Real-time inventory, order tracking, and delivery notifications</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>High-conversion product pages with responsive image galleries</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Automated discount codes, tax configurations, and customer accounts</span>
+                </li>
+              </ul>
+              <div class="pt-2 flex items-center justify-between">
+                <span class="text-xs text-slate-500 font-medium">
+                  <strong>Good for:</strong> fashion, food, retail, and businesses selling physical or digital products.
+                </span>
+                <a href="start.html" class="text-sm font-semibold text-cyan-800 hover:text-cyan-900 inline-flex items-center gap-1 group">
+                  Start this project
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Pure CSS Store Mockup -->
+            <div class="md:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-inner" aria-hidden="true">
+              <div class="flex justify-between items-center pb-3 border-b border-slate-200 text-xs font-semibold text-slate-700">
+                <span>Featured Store</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[0.625rem]">Checkout Ready</span>
+              </div>
+              <div class="pt-4 grid grid-cols-2 gap-3">
+                <div class="bg-white border border-slate-200 rounded-lg p-3 space-y-2">
+                  <div class="h-16 bg-slate-100 rounded-md"></div>
+                  <div class="h-2 w-3/4 bg-slate-700 rounded"></div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-slate-900">&#8358;45,000</span>
+                    <span class="w-5 h-5 rounded bg-slate-900 text-white text-[0.625rem] flex items-center justify-center">+</span>
+                  </div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-lg p-3 space-y-2">
+                  <div class="h-16 bg-slate-100 rounded-md"></div>
+                  <div class="h-2 w-3/4 bg-slate-700 rounded"></div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-slate-900">&#8358;89,000</span>
+                    <span class="w-5 h-5 rounded bg-slate-900 text-white text-[0.625rem] flex items-center justify-center">+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 03: Web Applications -->
+          <article class="service-sticky-card top-[160px] bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center min-h-[420px]">
+            <div class="md:col-span-7 space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <span class="text-xs font-mono-code font-bold text-slate-400 text-lg">03</span>
+                  <div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-800">
+                    <i data-lucide="app-window" class="w-5 h-5" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-slate-900">Web Applications</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-[0.6875rem] font-mono-code uppercase text-slate-400 block tracking-wider font-semibold">Starting Price</span>
+                  <span class="text-xl font-extrabold text-cyan-800 font-mono-code">&#8358;300,000</span>
+                </div>
+              </div>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Interactive tools your users log into: dashboards, client portals, booking engines, and marketplaces.
+              </p>
+              <ul class="space-y-2.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Role-based user permissions and secure session management</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Live data dashboards and interactive reporting views</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Admin panels built for non-technical team operators</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Third-party integrations with WhatsApp, CRMs, and payment webhooks</span>
+                </li>
+              </ul>
+              <div class="pt-2 flex items-center justify-between">
+                <span class="text-xs text-slate-500 font-medium">
+                  <strong>Good for:</strong> startups, campus platforms, logistics dispatch, communities.
+                </span>
+                <a href="start.html" class="text-sm font-semibold text-cyan-800 hover:text-cyan-900 inline-flex items-center gap-1 group">
+                  Start this project
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Pure CSS Dashboard Mockup -->
+            <div class="md:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-inner" aria-hidden="true">
+              <div class="space-y-3">
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="bg-white border border-slate-200 p-2.5 rounded-lg">
+                    <span class="text-[0.625rem] text-slate-400 uppercase font-mono-code">Active Users</span>
+                    <div class="text-lg font-bold text-slate-900 mt-0.5">1,420</div>
+                  </div>
+                  <div class="bg-white border border-slate-200 p-2.5 rounded-lg">
+                    <span class="text-[0.625rem] text-slate-400 uppercase font-mono-code">Uptime</span>
+                    <div class="text-lg font-bold text-cyan-700 mt-0.5">99.98%</div>
+                  </div>
+                </div>
+                <div class="bg-white border border-slate-200 p-3 rounded-lg space-y-2">
+                  <div class="flex justify-between text-xs text-slate-500">
+                    <span>Performance Metrics</span>
+                    <span class="text-cyan-700 font-bold">Optimal</span>
+                  </div>
+                  <div class="flex items-end gap-1.5 h-16 pt-2">
+                    <div class="w-1/6 bg-cyan-100 h-1/3 rounded-t"></div>
+                    <div class="w-1/6 bg-cyan-200 h-1/2 rounded-t"></div>
+                    <div class="w-1/6 bg-cyan-400 h-3/4 rounded-t"></div>
+                    <div class="w-1/6 bg-cyan-600 h-2/3 rounded-t"></div>
+                    <div class="w-1/6 bg-cyan-500 h-4/5 rounded-t"></div>
+                    <div class="w-1/6 bg-slate-900 h-full rounded-t"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 04: Custom Software Development -->
+          <article class="service-sticky-card top-[180px] bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center min-h-[420px]">
+            <div class="md:col-span-7 space-y-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <span class="text-xs font-mono-code font-bold text-slate-400 text-lg">04</span>
+                  <div class="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-800">
+                    <i data-lucide="cpu" class="w-5 h-5" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-slate-900">Custom Software Development</h3>
+                </div>
+                <div class="text-right">
+                  <span class="text-[0.6875rem] font-mono-code uppercase text-slate-400 block tracking-wider font-semibold">Starting Price</span>
+                  <span class="text-xl font-extrabold text-cyan-800 font-mono-code">&#8358;500,000</span>
+                </div>
+              </div>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Software built around the way your business already operates, including custom automation that removes manual busywork.
+              </p>
+              <ul class="space-y-2.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Tailored system architecture designed for operational longevity</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>End-to-end workflow automation pipelines eliminating duplicate entry</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>AI-assisted data processes where they genuinely save time</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-700 flex-shrink-0" aria-hidden="true"></i>
+                  <span>Bespoke internal business tools and specialized API connectors</span>
+                </li>
+              </ul>
+              <div class="pt-2 flex items-center justify-between">
+                <span class="text-xs text-slate-500 font-medium">
+                  <strong>Good for:</strong> teams drowning in manual tasks, or unique ideas with no off-the-shelf software.
+                </span>
+                <a href="start.html" class="text-sm font-semibold text-cyan-800 hover:text-cyan-900 inline-flex items-center gap-1 group">
+                  Start this project
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Pure CSS Network Node Graph Mockup -->
+            <div class="md:col-span-5 bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-inner flex items-center justify-center min-h-[200px]" aria-hidden="true">
+              <div class="relative w-48 h-32">
+                <svg class="w-full h-full" viewBox="0 0 192 128">
+                  <line x1="24" y1="64" x2="96" y2="24" stroke="#CBD5E1" stroke-width="2"/>
+                  <line x1="24" y1="64" x2="96" y2="104" stroke="#CBD5E1" stroke-width="2"/>
+                  <line x1="96" y1="24" x2="168" y2="64" stroke="#06B6D4" stroke-width="2"/>
+                  <line x1="96" y1="104" x2="168" y2="64" stroke="#06B6D4" stroke-width="2"/>
+                  
+                  <circle cx="24" cy="64" r="10" fill="#0F172A"/>
+                  <circle cx="96" cy="24" r="8" fill="#06B6D4"/>
+                  <circle cx="96" cy="104" r="8" fill="#06B6D4"/>
+                  <circle cx="168" cy="64" r="12" fill="#0E7490"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. Our Process Section (3-Step Animated Timeline)
+         ====================================================================== -->
+    <section id="process" class="py-24 bg-white border-b border-slate-200">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="max-w-[640px] mb-16">
+          <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold mb-2 block">
+            How it works
+          </span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            Three steps from idea to live
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            No mystery. You always know what stage we are in, what has been finished, and what comes next.
+          </p>
+        </div>
+
+        <!-- Desktop Connector Line SVG Trace -->
+        <div class="hidden md:block relative mb-8" aria-hidden="true">
+          <svg class="w-full h-8" viewBox="0 0 1000 32">
+            <line id="process-connector-line" class="process-line-trace" x1="50" y1="16" x2="950" y2="16" stroke="#06B6D4" stroke-width="2"/>
+            <circle cx="150" cy="16" r="6" fill="#0F172A" stroke="#06B6D4" stroke-width="3"/>
+            <circle cx="500" cy="16" r="6" fill="#0F172A" stroke="#06B6D4" stroke-width="3"/>
+            <circle cx="850" cy="16" r="6" fill="#0F172A" stroke="#06B6D4" stroke-width="3"/>
+          </svg>
+        </div>
+
+        <!-- 3 Step Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Step 1: Discovery -->
+          <article class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between reveal-block">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono-code font-bold text-cyan-800">STEP 01</span>
+                <div class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-800">
+                  <i data-lucide="search" class="w-4 h-4" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Discovery</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                We learn your business, your users, and what measurable success looks like before scoping code.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 pt-2">
+                <li class="flex items-center gap-2">&bull; Define business requirements and constraints</li>
+                <li class="flex items-center gap-2">&bull; Map the user flow and journey touchpoints</li>
+                <li class="flex items-center gap-2">&bull; Set clear, locked deliverables and timelines</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 text-xs font-semibold text-cyan-900">
+              You'll get: a clear project scope and page architecture plan.
+            </div>
+          </article>
+
+          <!-- Step 2: Development -->
+          <article class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between reveal-block">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono-code font-bold text-cyan-800">STEP 02</span>
+                <div class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-800">
+                  <i data-lucide="code-2" class="w-4 h-4" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Development</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                We build it carefully, show you progress at each milestone, and test across all devices.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 pt-2">
+                <li class="flex items-center gap-2">&bull; Precision engineering with clean, zero-bloat code</li>
+                <li class="flex items-center gap-2">&bull; UI/UX responsive polish across 6 viewports</li>
+                <li class="flex items-center gap-2">&bull; Rigorous performance and accessibility audits</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 text-xs font-semibold text-cyan-900">
+              You'll get: working previews you can review and react to.
+            </div>
+          </article>
+
+          <!-- Step 3: Launch & Scale -->
+          <article class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between reveal-block">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono-code font-bold text-cyan-800">STEP 03</span>
+                <div class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-800">
+                  <i data-lucide="rocket" class="w-4 h-4" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Launch &amp; Scale</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                We deploy, tune performance, and hand over a live platform ready for growth.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 pt-2">
+                <li class="flex items-center gap-2">&bull; Cloud deployment, domain routing, and SSL setup</li>
+                <li class="flex items-center gap-2">&bull; SEO indexation and speed verification</li>
+                <li class="flex items-center gap-2">&bull; Full administrator walkthrough and asset handover</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 text-xs font-semibold text-cyan-900">
+              You'll get: a live platform and complete ownership.
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. Client Success Stories Section (Structured Placeholder Cards)
+         ====================================================================== -->
+    <section id="stories" class="py-24 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="max-w-[640px] mb-16">
+          <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold mb-2 block">
+            Success stories
+          </span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            Built with clients who grew
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            A few of the people who trusted us with their project brief.
+          </p>
+        </div>
+
+        <!-- Testimonials Cards Grid (Hydrated by main.js from TESTIMONIALS array) -->
+        <!-- <!-- REPLACE WITH REAL TESTIMONIAL --> -->
+        <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Fallback Server-Rendered Placeholder Cards -->
+          <article class="bg-white border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm relative">
+            <span class="absolute top-4 right-4 text-[0.6875rem] font-mono-code uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200">
+              Placeholder
+            </span>
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-100 mb-4">
+                Orders up after launch
+              </span>
+              <blockquote class="text-slate-800 text-base md:text-lg leading-relaxed mb-6">
+                &ldquo;The checkout is seamless and our customers stopped calling to ask how to pay. Best investment we made this year.&rdquo;
+              </blockquote>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div class="w-10 h-10 rounded-lg bg-slate-900 text-cyan-400 font-mono-code font-bold text-sm flex items-center justify-center flex-shrink-0">
+                TA
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 text-sm leading-tight">T. Adeyemi</h4>
+                <p class="text-xs text-slate-500 leading-tight">Founder, Retail Studio</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. Frequently Asked Questions Section (Accessible Details / Summary)
+         ====================================================================== -->
+    <section id="faq" class="py-24 bg-white border-b border-slate-200">
+      <div class="max-w-[800px] mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-[600px] mx-auto mb-16">
+          <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold mb-2 block">
+            Common questions
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            Frequently asked questions
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Straightforward answers to the questions clients ask before submitting a project brief.
+          </p>
+        </div>
+
+        <!-- 5 Native Details/Summary Accordion Items -->
+        <div class="space-y-4">
+          
+          <details class="faq-accordion-item group bg-slate-50 border border-slate-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 text-lg select-none">
+              <span>How long does a project take?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" aria-hidden="true"></i>
+            </summary>
+            <div class="pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-4">
+              Standard websites typically take 2 to 3 weeks. E-commerce platforms and web applications take 4 to 8 weeks depending on complexity. We agree on a guaranteed milestone timeline before starting.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item group bg-slate-50 border border-slate-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 text-lg select-none">
+              <span>How much does it cost?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" aria-hidden="true"></i>
+            </summary>
+            <div class="pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-4">
+              We provide transparent, fixed starting rates: Standard Websites start from &#8358;100,000, E-commerce Platforms from &#8358;200,000, Web Applications from &#8358;300,000, and Custom Software from &#8358;500,000. Every build is quoted transparently upfront based on your brief with zero hidden fees.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item group bg-slate-50 border border-slate-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 text-lg select-none">
+              <span>What do I need to provide before we start?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" aria-hidden="true"></i>
+            </summary>
+            <div class="pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-4">
+              Simply complete the project brief on our registration page, and provide a Google Drive folder link containing your logo, brand guidelines, and any copy or images you would like included.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item group bg-slate-50 border border-slate-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 text-lg select-none">
+              <span>Do you handle hosting and custom domains?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" aria-hidden="true"></i>
+            </summary>
+            <div class="pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-4">
+              Yes. We set up your domain records, SSL security certificates, and cloud hosting infrastructure, and hand over complete admin ownership to your team upon launch.
+            </div>
+          </details>
+
+          <details class="faq-accordion-item group bg-slate-50 border border-slate-200 rounded-xl p-6 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 text-lg select-none">
+              <span>What happens after launch?</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" aria-hidden="true"></i>
+            </summary>
+            <div class="pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 mt-4">
+              Every build includes a 30-day post-launch warranty to fix any unexpected bugs. We also provide ongoing maintenance retainers and feature upgrade plans when your user base grows.
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. Contact Section & Dark CTA Banner (Hard Rule #2 Exception)
+         ====================================================================== -->
+    <section id="contact" class="py-24 bg-slate-50">
+      <div class="max-w-[1200px] mx-auto px-6 space-y-8">
+        
+        <!-- Top Half: Direct Contact Card -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <span class="text-xs font-mono-code uppercase tracking-widest text-cyan-800 font-bold mb-2 block">Direct Inquiry</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Speak directly with us</h3>
+            <p class="text-slate-600 text-sm">Have quick questions before submitting your brief? Reach out directly.</p>
+          </div>
+          <div class="space-y-4 text-sm">
+            <!-- [YOUR INPUT: email and phone] -->
+            <div>
+              <span class="text-xs text-slate-400 font-mono-code uppercase block">Email</span>
+              <a href="mailto:icoms8895@gmail.com" class="font-semibold text-slate-900 hover:text-cyan-700">
+                icoms8895@gmail.com
+              </a>
+            </div>
+            <div>
+              <span class="text-xs text-slate-400 font-mono-code uppercase block">Phone</span>
+              <a href="tel:+2348000000000" class="font-semibold text-slate-900 hover:text-cyan-700">
+                +234 800 000 0000
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center md:justify-end">
+            <!-- [YOUR INPUT: WhatsApp phone number] -->
+            <a href="https://wa.me/2348000000000?text=Hello%20A.U.T.O.MATE%20I%20have%20a%20project%20inquiry" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full md:w-auto text-sm">
+              <i data-lucide="message-square" class="w-4 h-4 text-emerald-600" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Half: Final CTA Banner (The only dark card on the site: #0F172A) -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-16 text-white relative overflow-hidden shadow-2xl">
+          <div class="circuit-grid-pattern opacity-10" aria-hidden="true">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="url(#circuit-pattern)"/>
+            </svg>
+          </div>
+
+          <div class="relative z-10 max-w-[640px] space-y-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Have a project in mind? Let's build it.
+            </h2>
+            <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+              Submit your project brief today. We will review your goals and reply within 24 hours with a transparent scope and timeline.
+            </p>
+            <div class="pt-2">
+              <a href="start.html" class="btn-glow-hero">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-1 text-cyan-400" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       8. Global Footer
+       ======================================================================== -->
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center justify-between">
+      
+      <!-- Brand & Tagline -->
+      <div class="md:col-span-6 space-y-2">
+        <a href="index.html" class="flex items-center gap-3">
+          <svg class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+            <use href="#automate-logo"/>
+          </svg>
+          <span class="font-extrabold text-lg text-slate-900 tracking-tight">
+            A<span class="text-cyan-500">.</span>U<span class="text-cyan-500">.</span>T<span class="text-cyan-500">.</span>O<span class="text-cyan-500">.</span>MATE
+          </span>
+        </a>
+        <p class="text-xs text-slate-500 max-w-[380px]">
+          Digital Precision. Human Connection. Engineered for Scalable Impact.
+        </p>
+      </div>
+
+      <!-- Navigation & Social Links -->
+      <!-- [YOUR INPUT: social links] -->
+      <div class="md:col-span-6 flex flex-wrap md:justify-end items-center gap-6 text-xs text-slate-600">
+        <a href="#services" class="hover:text-slate-900 transition-colors">Services</a>
+        <a href="#process" class="hover:text-slate-900 transition-colors">Process</a>
+        <a href="#stories" class="hover:text-slate-900 transition-colors">Stories</a>
+        <a href="#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
+        <a href="start.html" class="font-semibold text-cyan-800 hover:text-cyan-900">Project Brief</a>
+        <span class="text-slate-300">|</span>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900" aria-label="Twitter">Twitter/X</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+
+      <!-- Copyright Notice with Auto-Year Script -->
+      <div class="md:col-span-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between text-xs text-slate-400">
+        <span>&copy; <span class="current-year">2026</span> A.U.T.O.MATE. All rights reserved.</span>
+        <span class="mt-2 sm:mt-0">Handcrafted with pure HTML, Tailwind CSS, &amp; vanilla JS.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Controller -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize Lucide Icons after DOM ready
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.lucide && window.lucide.createIcons) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
