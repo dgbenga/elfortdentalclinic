@@ -1,101 +1,134 @@
-# Site Overview: Elfort Dental Clinic
+# Site Overview & Product Requirements — A.U.T.O.M.A.T.E. (Tier 1)
 
-**Tier Calibrated:** Tier 1: Mini-Website  
-**Project Mission:** Single-page high-converting marketing landing page for Elfort Dental Clinic Concierge Service, delivering unhurried, private, hospital-grade dental care directly to patient residences and private executive suites.  
-**Primary Conversion:** Direct WhatsApp enquiry (`wa.me`) with prefilled service intent, eliminating the friction of multi-step intake forms.  
-**Financial & Operational Scope:** Bootstrapped Lean Launch ($0/mo recurring SaaS overhead using Cloudflare Pages / Vercel static hosting and direct WhatsApp business routing).  
+## 1. Executive Summary & Core Offer
+**A.U.T.O.M.A.T.E.** ("Digital Precision. Human Connection. Engineered for Scalable Impact.") is an elite, high-precision software and web development studio. The studio engineers bespoke digital products across four core specializations:
+1. **Standard Websites**: Fast, high-conversion marketing and corporate websites for businesses, institutions, and personal brands.
+2. **E-commerce Platforms**: Turnkey online stores with bulletproof checkout flows, inventory tracking, and payment gateway integrations.
+3. **Web Applications**: Interactive software, portals, internal dashboards, booking systems, and member hubs.
+4. **Custom Software Development**: Tailored automation pipelines, internal tooling, and bespoke software built around specific operational workflows.
+
+### The Single Mission
+The site has exactly one operational job: **convert qualified business owners, startup founders, and project leads into high-fidelity project briefs via `start.html`.**
 
 ---
 
-## 1. The Core Offer
+## 2. Autonomous UX Secondary Research Engine
 
-Elfort Dental Clinic brings a fully mobile, hospital-grade dental suite directly into your home or private office. Directed by Dr. [Dentist Name], we provide comprehensive preventive care, aesthetic smile design, gentle maintenance, and dignified bedside care for busy executives, parents with young children, and phobic patients who demand clinical excellence in complete privacy.
+### 2.1 Target Persona & Technical Literacy Audit
+* **Primary Audiences**:
+  * **SME Business Owners & Founders** (Ages 28–55): Managing existing operations, retail shops, professional service firms (clinics, legal, consulting, schools). Seeking digital credibility, direct sales, or streamlined customer inquiries.
+  * **Startup Creators & Product Builders** (Ages 24–42): Bootstrapping MVPs, campus platforms, marketplace ideas, or custom tools.
+  * **Operations Managers**: Looking to replace repetitive manual spreadsheets and WhatsApp chats with reliable automated software.
+* **Technical Literacy Calibration**:
+  * Moderate to Low. They understand their business objectives, revenue goals, and customer needs, but they do NOT write code, configure Docker containers, or manage cloud DNS.
+  * **Design Implication**: Zero developer plumbing jargon (*"API endpoints"*, *"CI/CD pipelines"*, *"dispatch gates"*, *"monorepos"*). UI copy must explain outcomes, speed, reliability, and human accountability in crystal-clear plain English.
+* **Device Profiles**:
+  * 65%+ mobile traffic (executives reviewing links shared on WhatsApp, LinkedIn, or Twitter/X).
+  * 35% desktop traffic (business owners seated at their desks filling out detailed briefs with open tabs and file links).
 
----
-
-## 2. Autonomous UX Research Intelligence
-
-### 2.1 Target Visitor Profiles & Cognitive Hesitation
-
-| Persona | Core Need | Primary Objection / Cognitive Hesitation | Resolution Strategy |
-|---|---|---|---|
-| **Busy Executives & Founders** | Save billable time, zero commute, total scheduling flexibility. | *"Can mobile equipment deliver the exact same clinical quality as a $2M brick-and-mortar practice?"* | In-Home Experience breakdown showing hospital-grade portable equipment, HEPA filtration, digital x-rays, and autoclave biological monitoring. |
-| **Parents of Young Children** | Avoid waiting-room chaos and fear; convenient family scheduling. | *"Is it safe and gentle for young kids, or will it feel clinical and scary?"* | Gentle approach in familiar surroundings; no strange waiting rooms, family appointments in one single visit. |
-| **Anxious & Dental-Phobic Patients** | Compassionate, judgment-free care with complete patient control. | *"Will I be scolded, judged, or forced into painful procedures without warning?"* | "Zero Anxiety" pillar: unhurried appointments, patient-controlled pacing, calming sensory environment, zero judgmental lectures. |
-| **Seniors & Limited Mobility** | Dignified, comfortable bedside and living room dental hygiene. | *"Can someone actually do a real cleaning or adjustment if the patient cannot sit upright?"* | Bedside adaptability, compassionate mobile ergonomics, zero transport trauma. |
-
-### 2.2 Jakob's Law Familiar Market Patterns
-High-net-worth medical consumers benchmark Elfort Dental Clinic against elite hospitality and modern private clinics:
-* **Hospitality (Aman Resorts, Four Seasons):** Calm neutral stone palettes, warm taupe accents, generous white space, quiet confidence without flashing banners.
-* **Modern Health (One Medical, Forward Health):** Clear step-by-step visit breakdowns, transparent equipment explanations, instant chat-first communication.
-* **E-Commerce & SaaS (Stripe, Linear):** Single-click primary CTAs, 44px minimum tap targets, zero cognitive clutter, sub-second LCP.
+### 2.2 Jakob's Law Familiar Market Pattern Mapping
+Users spend the majority of their time on top-tier interfaces like Stripe, Linear, Apple, and Google Workspace:
+* **Mental Models Adopted**:
+  * **Linear/Stripe Precision**: Crisp 1px borders, subtle cyan focus halos, high typographic hierarchy, clean whitespace, and light-theme clarity.
+  * **Google Docs/Drive Native Flow**: For file sharing, users already use Google Drive. Asking for a Drive link rather than forcing fragile multi-file browser uploads matches their existing workflow and prevents upload timeouts.
+  * **Progressive Disclosure Forms**: Single-page continuous scroll with a sticky step counter (Step 1 of 4) gives visitors full visibility without multi-step wizard anxiety.
 
 ### 2.3 Jobs-To-Be-Done (JTBD) Matrix
 
-1. **JTBD 1 (Executive Convenience):** *When* my schedule is packed with meetings, *I want* a licensed dentist to arrive at my residence or office, *so that* I maintain oral health without sacrificing 2.5 hours to traffic and waiting rooms.
-2. **JTBD 2 (Phobic Relief):** *When* I experience acute dental anxiety from past clinic trauma, *I want* a private, unhurried home visit where I set the pace, *so that* I receive essential care without panic or shame.
-3. **JTBD 3 (Family Efficiency):** *When* my household needs bi-annual cleanings, *I want* a trusted professional to treat my family sequentially at home, *so that* checkups are relaxed and efficient.
-4. **JTBD 4 (Senior Dignity):** *When* my aging parent has limited mobility, *I want* a qualified dentist to come directly to their bedside or armchair, *so that* their oral health is maintained with dignity and safety.
-5. **JTBD 5 (Aesthetic Discretion):** *When* seeking cosmetic enhancement or smile maintenance, *I want* complete boutique privacy without clinic waiting room visibility, *so that* my personal aesthetic care remains strictly confidential.
+| # | Type | Situation (When...) | User Desire (I want to...) | Desired Outcome (So that I can...) |
+|---|---|---|---|---|
+| 1 | **Functional** | I have an outdated or nonexistent website | Hire an engineering team that builds a fast, modern site without needing constant hand-holding | Launch a credible digital storefront that converts visitors into paying clients |
+| 2 | **Functional** | I run a retail or service business | Set up an e-commerce platform with automated payment gateways and inventory tracking | Stop manually confirming bank transfers and managing stock on messy WhatsApp chats |
+| 3 | **Functional** | My team is overwhelmed with repetitive manual tasks | Build custom automation software tailored to our exact workflow | Save 15+ hours weekly and eliminate human data-entry errors |
+| 4 | **Emotional** | I have been burned in the past by freelance developers who ghosted me | Work with an engineering studio that provides transparent 3-step milestones and working previews | Feel confident, respected, and in total control of my timeline and investment |
+| 5 | **Emotional** | I am preparing to submit a project brief | Understand exactly what the engagement will cost, how long it takes, and what happens next | Avoid the embarrassment of feeling technically incompetent or getting hit with surprise invoices |
+| 6 | **Social** | I share my new platform with partners, investors, or clients | Present an ultra-polished, $1,000,000-grade digital presence | Establish commanding authority and outshine local and international competitors |
+| 7 | **Social** | I refer peers to an engineering team | Recommend A.U.T.O.M.A.T.E. with complete pride | Be seen as a connected, savvy operator who works only with top-tier talent |
 
-### 2.4 Pain Points & Ranked Frustrations (Verbatim Language)
+### 2.4 Pain Points & Frustrations Hierarchy (Verbatim User Language)
 
-1. **The Sterile Waiting Room Nightmare (Critical P0):** *"The smell of antiseptic and the sound of drills from the other room sends my anxiety through the roof before they even call my name."*
-2. **The 2.5-Hour Time Sink (High P1):** *"A routine cleaning somehow burns half my working morning between driving, parking garages, and waiting in an uncomfortable chair."*
-3. **Equipment Quality Skepticism (High P1):** *"I worry mobile dentistry means someone showing up with tools in a backpack that aren't properly sterile."*
-4. **Intake Bureaucracy Fatigue (Medium P2):** *"I just want to know if they can see me this Thursday without filling out a 10-page portal questionnaire first."*
-5. **Opaque Pricing Ambiguity (Medium P2):** *"Clinics never tell you what a visit actually costs until you receive an out-of-network bill three months later."*
+1. **The Developer Ghosting Epidemic (Critical)**:
+   > *"The last developer took 50% upfront, worked for three weeks, and then completely disappeared when bugs started showing up."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Documented 3-Step Process (Discovery -> Development -> Launch & Scale) with working previews, clear handover protocols, and direct contact.
+2. **Pricing Opacity & Bait-and-Switch (Critical)**:
+   > *"They quoted me $500, but two months in they demanded another $1,500 just to make the forms work on mobile phones."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Exhaustive 13-point discovery brief upfront to scope exact requirements before any financial commitment.
+3. **Mobile Sluggishness & Broken Layouts (High)**:
+   > *"The site looks nice on their laptop, but when customers open it on an iPhone or Android phone, the text gets cut off and buttons don't click."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Mobile-first engineering tested strictly from 360px up with 44px minimum tap targets.
+4. **Jargon Overload & Tech Gatekeeping (High)**:
+   > *"I asked for a simple online booking system, and they gave me a 10-page proposal full of Kubernetes and microservices talk. I just wanted my clients to book appointments."*
+   * *A.U.T.O.M.A.T.E. Remedy*: The 12-Year-Old/Executive Litmus Test. Clear descriptions of business utility and customer outcomes.
+5. **Form Abandonment & Lost Progress (Medium)**:
+   > *"I spent 20 minutes filling out a detailed project questionnaire, accidentally hit refresh, and everything was wiped out. I gave up."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Automated debounced `localStorage` draft saving with instant restoration banner.
+6. **Vague Social Proof & Stock Photo Deception (Medium)**:
+   > *"Every agency website has the same stock photos of people in glass offices and fake reviews claiming 500% ROI overnight."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Zero fake metrics; clear, honest project case cards with transparent placeholder labels until verified client releases are signed.
+7. **File Upload Failures on Complex Briefs (Medium)**:
+   > *"The contact form had a 10MB file limit. My brand guideline PDF was 25MB, so the entire submission crashed."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Dedicated Google Drive asset upload link input with a step-by-step helper guide.
+8. **Post-Launch Desertion (Medium)**:
+   > *"They launched the site, emailed me a zip file of code I couldn't open, and refused to answer how to update a phone number."*
+   * *A.U.T.O.M.A.T.E. Remedy*: Dedicated Launch & Scale phase including domain setup, admin walkthrough, and maintenance options.
 
-### 2.5 Copywriting Vault & Domain Separation
+### 2.5 Competitive Landscape & Whitespace Mapping
 
-* **Strictly Banned Jargon:** `"surgical suites"`, `"invasive triage"`, `"tele-health intake portal"`, `"dispatch algorithms"`.
-* **Approved Empathy & Authority Vocabulary:** `"Private, unhurried care"`, `"Hospital-grade mobile sterilization"`, `"At your dining table, living room, or bedside"`, `"Direct WhatsApp dialogue with your dentist"`, `"Transparent, upfront estimates"`.
+* **Tier 1 (Direct Competitors)**: Local digital agencies and freelance collectives.
+  * *Weakness*: Inconsistent quality, bloated WordPress/Elementor themes, slow load times, poor communication.
+* **Tier 2 (Indirect Competitors)**: DIY website builders (Wix, Squarespace, Shopify basic).
+  * *Weakness*: Cookie-cutter aesthetics, rigid templates, monthly subscription traps, lack of custom business logic.
+* **Tier 3 (Category Alternatives)**: Theme marketplaces (ThemeForest, Envato).
+  * *Weakness*: Unmaintained legacy code, security vulnerabilities, 50+ unused plugins, impossible to customize without breaking.
+* **The A.U.T.O.M.A.T.E. Whitespace**:
+  * **"Engineering Lab Precision with Human Connection"**: Handcrafted, ultra-clean code (0ms build step, 0 framework bloat), mathematical visual rhythm, transparent project brief scoping, and rapid turnaround.
+
+### 2.6 Human Copywriting Vault & Language Intelligence
+* **High-Intent Search Terms**: "hire website developer lagos", "bespoke web application development", "fast ecommerce website agency", "custom software development for business", "reliable web design studio".
+* **Language Vault Rules**:
+  * Banned Words: *seamless, cutting-edge, revolutionize, unleash, leverage, synergy, game-changing, holistic, paradigm*.
+  * Approved Tone: Crisp, confident, technical yet accessible, direct, respectful.
+  * Headline Standard: State the exact benefit directly. Example: *"Three steps from idea to live. No mystery. You always know what stage we are in."*
+
+### 2.7 Strategic Priorities & Design Sprint HMWs
+* **HMW 1**: How might we make filling out a 13-field project brief feel effortless and reassuring rather than like doing tax paperwork?
+* **HMW 2**: How might we convey high-tech engineering mastery using purely light-theme visual tension and mathematical typography without resorting to dark sci-fi tropes?
+* **HMW 3**: How might we guarantee that zero project brief data is ever lost due to accidental tab closures or mobile connection drops?
 
 ---
 
-## 3. Site Navigation & Information Architecture
+## 3. Sitemap & Page Objectives
 
-Elfort Dental Clinic is engineered as a single-page conversion architecture with smooth anchor navigation:
-
-1. **Sticky Header:** Elfort Dental Clinic wordmark, anchor links (`#services`, `#how-it-works`, `#experience`, `#about`, `#faq`), and primary CTA button.
-2. **Announcement Strip:** Operating schedule (`Mon–Sat 8AM–7PM`), service radius, and license reassurance.
-3. **Hero Section:** High-character typography, dual CTA (`Request Home Visit on WhatsApp` + secondary `Explore Services`), live status indicator (`Now Booking [City/Area]`), reassurance micro-copy.
-4. **Trust Metric Strip:** 4 quantified credentials (Years in practice, Home visits conducted, Hospital-grade sterilization standard, 100% private).
-5. **Three Pillars of Care:** Clinical Authority, Zero Anxiety, Boutique Discretion.
-6. **Services Grid:** 4 comprehensive service cards with individual WhatsApp prefill links:
-   - Comprehensive Preventive Suite (`ref=preventive`)
-   - Cosmetic Enhancements & Smile Design (`ref=cosmetic`)
-   - Restorative & Maintenance Care (`ref=restorative`)
-   - Family & Senior Concierge Dental (`ref=family-senior`)
-7. **Who We Serve (Elfort Personas):** 4 persona identification cards (Executives, Parents, Phobic Patients, Seniors).
-8. **How It Works (3 Steps):** Step 1: Connect on WhatsApp • Step 2: Virtual Screening & Custom Plan • Step 3: Concierge Arrival & Unhurried Care.
-9. **In-Home Experience ("What We Bring / What You Provide"):** Explicit breakdown dispelling equipment fears.
-10. **Testimonials & Social Proof:** Consented patient stories emphasizing gentleness, discretion, and punctuality.
-11. **About the Doctor:** Dr. [First & Last Name], credentials, clinical philosophy, and license transparency.
-12. **FAQ Accordion:** 6 high-intent objection handlers (Equipment, Safety/Sterilization, Pricing/Insurance, Anxiety Management, Service Area, Emergencies).
-13. **Final CTA Banner:** Evening dark band, scarcity/exclusivity reassurance (*"Limited appointments each week to guarantee unhurried care"*), direct WhatsApp button.
-14. **Practice Details & Legal Footer:** Regulated compliance notes, emergency redirect instruction, license numbers, privacy policy links.
-15. **Persistent Mobile Bar (Sticky Bottom `< md`):** Thumb-reach WhatsApp booking bar with response time reassurance.
-16. **Floating Concierge Button (`md+` only):** Discrete persistent contact trigger hidden on mobile to prevent overlapping.
+```text
+A.U.T.O.M.A.T.E. Architecture
+├── index.html (Landing Page)
+│   ├── Navigation Bar (Sticky with blur, section tracking, Get Started CTA)
+│   ├── Hero Section (Circuit grid, right-aligned typography, cycling typewriter, glowing CTA)
+│   ├── Core Services (Sticky stacked cards with pure CSS interface mockups)
+│   ├── Our Process (3-step timeline with animated connector trace)
+│   ├── Client Success Stories (Honest outcome cards + initial avatars)
+│   ├── FAQ Accordion (5 practical answers removing client doubt)
+│   ├── Contact Block & Dark CTA Banner ("Have a project in mind? Let's build it.")
+│   └── Global Footer (Logo, copyright auto-year, repeated navigation)
+└── start.html (Project Brief Registration)
+    ├── Sticky Step Progress Bar (Scroll-synced across 4 sections)
+    ├── Section 1: About You & Your Business (Name, business, 160ch pitch, email, phone)
+    ├── Section 2: Audience & Goals (Audience, problem, primary action, project type cards)
+    ├── Section 3: Look, Feel & Inspiration (Existing branding, 3 liked sites, 3 disliked sites, tone chips)
+    ├── Section 4: Scope, Features & Assets (Pages needed, features needed, budget, timeline, Drive link)
+    └── Submission & Success State (Local draft auto-save, inline validation, honeypot, summary copy)
+```
 
 ---
 
-## 4. Primary Conversion Funnel
-
-* **Primary Mechanism:** WhatsApp Click-to-Chat API  
-* **URL Pattern:** `https://wa.me/[PHONE_NUMBER]?text=[ENCODED_MESSAGE]`
-* **Default Hero Text:** `"Hi Dr. [Name], I would like to inquire about scheduling a private home dental visit in [Area]."`
-* **Service-Specific Prefills:**
-  - Preventive: `"Hi Dr. [Name], I'd like to book a comprehensive home cleaning and oral exam."`
-  - Cosmetic: `"Hi Dr. [Name], I'd like to inquire about at-home smile brightening and cosmetic consultation."`
-  - Restorative: `"Hi Dr. [Name], I need a home visit for restorative care or crown maintenance."`
-  - Family/Senior: `"Hi Dr. [Name], I would like to discuss a home visit for my family / elderly relative."`
-* **SLA Reassurance:** *"Direct response from the dental team • Usually replies within minutes during business hours"*.
+## 4. Conversion Hierarchy
+* **Primary Conversion Goal**: Click any "Get Started" button -> navigate to `start.html` -> complete all required fields -> click "Submit Project Brief".
+* **Secondary Conversion Goal**: Direct contact via `mailto:` or WhatsApp pre-filled chat link from the contact card.
 
 ---
 
-## 5. Explicit Out-of-Scope Boundaries
-
-* **No User Accounts / Login Portals:** Eliminates unnecessary password fatigue and complex backend databases.
-* **No Server-Side Medical Record Storage (on this marketing landing page):** Health records and x-rays are transmitted via compliant direct provider channels.
-* **No Rigid E-Commerce Checkout:** Patients consult directly via WhatsApp before payment to confirm eligibility, travel distance, and custom treatment requirements.
+## 5. Explicit Out-of-Scope Boundaries (What We Are NOT Building)
+* **No Database or Backend Server**: Form operates via front-end simulation and drop-in `FORM_CONFIG` endpoint (Formspree / Google Apps Script / Web3Forms). No Node.js / Python / PHP backend servers required.
+* **No Authentication / User Accounts**: No login forms, JWT sessions, or customer portals on this marketing repository.
+* **No Dark Mode Toggle**: Strictly light-mode design system with crisp white backgrounds and slate ink.
+* **No Client Portal or Blog Engine**: Pure 2-page marketing and registration funnel.

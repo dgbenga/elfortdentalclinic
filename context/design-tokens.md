@@ -1,124 +1,122 @@
-# Design Tokens: Elfort Dental Clinic (Direction A — Quiet Luxury Editorial)
+# Design Tokens & Visual Architecture — A.U.T.O.M.A.T.E. (Tier 1)
 
-**Aesthetic Direction:** Direction A — "Quiet Luxury Editorial"  
-**Brand Identity:** Private Physician meets 5-Star Boutique Hospitality (Aman / Four Seasons aesthetic).  
-**Single-Knob Global CSS Cascade:** All tokens are defined as CSS variables at `:root` in `globals.css`. Modifying a single variable cascades globally across every Atom, Molecule, and Organism without ad-hoc overrides.
+## 1. Creative Direction: "Engineering Lab Precision"
+The visual identity of **A.U.T.O.M.A.T.E.** is anchored in mathematical clarity, architectural balance, and scientific minimalism. Think of an advanced hardware research facility or a precision instrument interface—crisp white surfaces, deep slate ink, razor-sharp 1px dividers, and high-frequency cyan telemetry highlights.
+
+**Key Aesthetic Principles**:
+* **Light Theme Supremacy**: 100% white and light slate canvases. Light mode is inherently unforgiving of bad alignment and sloppy typography; our precision execution turns this into a high-trust competitive advantage.
+* **Typographic Authority**: High-contrast heading hierarchy. Banning rounded novelty badges; metadata is communicated through uppercase tracking and mono accents.
+* **Dynamic Restraint**: Animations are purposeful and functional (drawing circuit traces, stacking cards, cycling typewriter terms). Nothing bounces, floats, or distracts.
 
 ---
 
-## 1. CSS Custom Properties (`globals.css`)
+## 2. Locked Color Tokens (CSS Custom Properties)
+
+All colors are declared once in `assets/css/styles.css` under `:root` and mapped directly into the Tailwind configuration. Changing a single custom property cascades globally across all components.
 
 ```css
-@layer base {
-  :root {
-    /* Canvas & Surfaces */
-    --background: 40 20% 98%;          /* #FAFAF9 Warm Stone White */
-    --foreground: 24 9.8% 10%;         /* #1C1917 Obsidian Dark */
+:root {
+  /* Surface & Canvas */
+  --bg: #FFFFFF;             /* Crisp page canvas */
+  --surface: #F8FAFC;        /* Slate-50: Cards, alternating sections, form inputs */
+  --line: #E2E8F0;           /* Slate-200: 1px geometric borders, dividers, grid lines */
 
-    --card: 0 0% 100%;                 /* #FFFFFF Pure Crisp Card Surface */
-    --card-foreground: 24 9.8% 10%;    /* #1C1917 */
+  /* Text & Ink */
+  --ink: #0F172A;            /* Slate-900: High-contrast headings, body text, primary buttons */
+  --ink-soft: #475569;       /* Slate-600: Secondary text, descriptions (passes 4.5:1 on white) */
 
-    --popover: 0 0% 100%;              /* #FFFFFF */
-    --popover-foreground: 24 9.8% 10%;
+  /* Telemetry & Accent (Cyan Spectrum) */
+  --accent: #06B6D4;         /* Cyan-500: Highlights, borders, active focus rings, button glow halos */
+  --accent-deep: #0E7490;    /* Cyan-700: Small text on white (passes WCAG AA 4.5:1 contrast) */
+  --accent-glow: rgba(6, 182, 212, 0.25); /* Cyan glow spread for interactive hover states */
 
-    /* Brand Accents (Champagne Gold) */
-    --primary: 40 48% 56%;             /* #C5A059 Warm Champagne Gold (borders, icons, decorative) */
-    --primary-foreground: 24 9.8% 10%; /* #1C1917 Dark text on gold */
-    --primary-text-safe: 41 65% 28%;   /* #775A19 Text-Safe Gold (WCAG AA ≥ 4.5:1 on light canvas) */
+  /* State & Feedback */
+  --success: #10B981;        /* Emerald-500: Form success checkmark and draft restored state */
+  --error: #DC2626;          /* Red-600: Form validation errors and required alert tags */
 
-    /* Secondary & Muted Tones */
-    --secondary: 40 14% 94%;           /* #F4F1EA Soft Warm Gray */
-    --secondary-foreground: 24 9.8% 10%;
-
-    --muted: 36 12% 92%;               /* #ECE7DF Subtle Neutral Fill */
-    --muted-foreground: 25 5% 35%;     /* #57534E Muted Truffle (Body text, ≥ 5.2:1 contrast) */
-
-    --accent: 40 48% 56%;              /* #C5A059 */
-    --accent-foreground: 24 9.8% 10%;
-
-    /* Dark Section (Inverse Band for Final CTA & Footer) */
-    --dark-surface: 24 9.8% 10%;       /* #1C1917 Obsidian */
-    --dark-foreground: 40 20% 98%;      /* #FAFAF9 Warm White */
-    --dark-muted: 30 5% 65%;           /* #A8A29E Warm Stone Gray */
-
-    /* WhatsApp Primary Conversion Colors (P0 Contrast Fix Applied) */
-    --cta-whatsapp: 147 77% 31%;        /* #128C4A Deep Forest Green (White text contrast = 4.8:1, WCAG AA Pass) */
-    --cta-whatsapp-hover: 147 80% 26%;  /* #0E703B Darker Green on Hover */
-    --cta-whatsapp-bright: 142 70% 49%; /* #25D366 Official WhatsApp Green (Strictly paired with #0B3D1E text = 8.6:1) */
-    --cta-whatsapp-dark-text: 142 69% 14%; /* #0B3D1E High-Contrast Text for bright green */
-
-    /* Borders, Inputs & Radii */
-    --border: 30 6% 90%;               /* #E7E5E4 / neutral-200/60 */
-    --input: 30 6% 90%;
-    --ring: 40 48% 56%;                /* #C5A059 Focus ring */
-
-    --radius-sm: 0.375rem;             /* 6px */
-    --radius-md: 0.75rem;              /* 12px */
-    --radius-lg: 1rem;                 /* 16px - Standard Cards */
-    --radius-xl: 1.5rem;               /* 24px - Hero & Banners */
-    --radius-full: 9999px;             /* Buttons & Round Avatars */
-
-    /* Elevation Shadows */
-    --shadow-soft: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
-    --shadow-card: 0 8px 30px -4px rgba(28, 25, 23, 0.06);
-    --shadow-hover: 0 16px 40px -6px rgba(28, 25, 23, 0.10);
-  }
+  /* Radii */
+  --radius-sm: 8px;          /* Badges and chip inputs */
+  --radius-md: 12px;         /* Buttons and form fields */
+  --radius-lg: 16px;         /* Service cards, testimonial blocks, contact containers */
+  --radius-full: 9999px;     /* Pill avatars and dot indicators only */
 }
 ```
 
----
-
-## 2. Typography System (Anti-Generic Specification)
-
-*Strictly avoids generic AI defaults (`Inter + Roboto`, `Arial`).*
-
-| Role | Font Family | Google Font / Fallback | Psychological Intention | Usage Rules |
-|---|---|---|---|---|
-| **Display Headings (`h1`, `h2`)** | **Instrument Serif** | `'Instrument Serif', Georgia, serif` | Timeless editorial grace, high-trust physician authority. | Used for hero title, section primary headlines, quote highlights. |
-| **Interface & Body Text** | **Plus Jakarta Sans** | `'Plus Jakarta Sans', system-ui, sans-serif` | Crisp modern readability, warm geometric curves. | Used for all body copy, navigation, buttons, and card text. |
-| **Tabular & Accents** | **Geist Mono** | `'Geist Mono', monospace` | Clinical accuracy and verified credentials. | **Quarantined**: Used ONLY for operating hours, license numbers, statistics, and timestamps. Never for narrative copy. |
-
-### Type Scale & Leading Hierarchy
-
-```text
-Display-LG (Hero H1)     : Desktop 54px / 1.15 line-height / -0.02em tracking
-                           Mobile  38px / 1.2 line-height / -0.01em tracking
-Headline-LG (Section H2) : Desktop 36px / 1.25 line-height / -0.015em tracking
-                           Mobile  28px / 1.3 line-height / -0.01em tracking
-Headline-SM (Card H3)    : Desktop 22px / 1.35 line-height / normal tracking
-                           Mobile  20px / 1.4 line-height / normal tracking
-Body-LG (Subhead/Intro)  : 18px / 1.6 line-height / 45–65 characters line length max
-Body-MD (Standard Body)  : 16px / 1.65 line-height / #57534E (≥ 4.5:1 contrast)
-Body-SM (Footnotes/Meta) : 14px / 1.5 line-height / #78716C
-Label-SM (Eyebrow/Meta)  : 12px / 1.4 line-height / 0.05em tracking / uppercase
-```
+### Contrast & Accessibility Invariant
+> [!IMPORTANT]
+> **The Cyan Text Contrast Rule**: `--accent` (`#06B6D4`) has a contrast ratio of only **2.9:1** against white `#FFFFFF`, which FAILS WCAG AA for body text. Therefore:
+> * `#06B6D4` is strictly quarantined to decorative fills, borders, glowing halos, icons, and large graphic accents.
+> * Any colored text, link, or label rendered on a white or surface background MUST use `--accent-deep` (`#0E7490`), which provides an accessible **4.8:1** contrast ratio.
 
 ---
 
-## 3. Spacing System & Grid Rhythm (8pt Scale)
+## 3. Typography Hierarchy
 
-* Base Unit: `8px` (`0.5rem`)
-* Scale: `4px (0.5)`, `8px (1)`, `12px (1.5)`, `16px (2)`, `24px (3)`, `32px (4)`, `48px (6)`, `64px (8)`, `96px (12)`, `128px (16)`
-* Max Content Width: `80rem` (`1280px`) with fluid side gutters `px-6 md:px-12`
-* Section Vertical Padding:
-  - Desktop: `py-20 md:py-28` (80px – 112px) for serene, unhurried breathing room.
-  - Mobile: `py-14` (56px) to maintain pacing without dragging scroll depth.
+### 3.1 Font Families
+* **Primary Sans-Serif**: `Inter`, `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`.
+  * Weights loaded: `400` (Regular), `500` (Medium), `600` (Semi-bold), `700` (Bold), `800` (Extra-bold).
+  * Usage: Headings, body copy, form labels, button text, navigation links.
+* **Monospace Utility**: `JetBrains Mono`, `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`.
+  * Weights loaded: `400` (Regular), `500` (Medium).
+  * **Strict Monospace Quarantine**: Quarantined strictly to the typewriter cycling text, step numbers (`01`, `02`, `03`), card count tags, and technical metadata. Never used for narrative body text.
+
+### 3.2 Typographic Scale
+
+| Level | Size (Desktop) | Size (Mobile) | Weight | Tracking | Line-Height | Element |
+|---|---|---|---|---|---|---|
+| **Display H1** | `clamp(2.5rem, 7vw, 5.5rem)` | `2.5rem` | 800 | `-0.03em` | `1.0` | Hero Title (`A.U.T.O.M.A.T.E.`) |
+| **Section H2** | `clamp(1.875rem, 4vw, 3rem)` | `1.875rem` | 700 | `-0.02em` | `1.15` | Section Headings |
+| **Card H3** | `1.375rem` (22px) | `1.25rem` (20px) | 700 | `-0.01em` | `1.3` | Service & Story Titles |
+| **Subhead** | `1.25rem` to `1.5rem` | `1.125rem` | 400 | `normal` | `1.45` | Hero Tagline |
+| **Body Large**| `1.125rem` (18px) | `1.0rem` (16px) | 400 | `normal` | `1.65` | Introductions, key descriptions |
+| **Body Base** | `1.0rem` (16px) | `1.0rem` (16px) | 400 | `normal` | `1.65` | General copy, form inputs |
+| **Body Small**| `0.875rem` (14px) | `0.875rem` (14px) | 500 | `normal` | `1.5` | Helper text, form hints, footer |
+| **Metadata**  | `0.75rem` to `0.8125rem`| `0.75rem` | 600 | `+0.08em` | `1.0` | Eyebrow tags, counters (uppercase) |
+
+* **Max Line Length Constraint**: All explanatory paragraphs and body blocks are capped at `max-w-[65ch]` (65 characters per line) to prevent reading fatigue.
 
 ---
 
-## 4. Micro-Interactions & Reduced Motion Standard
+## 4. Spacing, Rhythm & Container Architecture
 
-* **Card Hover States:** Gentle `-translate-y-1` elevation with `--shadow-hover` and border color transition to `--primary/30`.
-* **Anchor Scrolling:** Smooth scroll with `90px` header compensation offset.
-* **Button States:** Magnetic active press (`active:scale-[0.98]`), subtle focus ring (`focus-visible:ring-2 focus-visible:ring-ring`).
-* **Motion Accessibility Invariant:**
-  ```css
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-  ```
+* **Grid Base**: 8px baseline increment (`8px`, `16px`, `24px`, `32px`, `40px`, `48px`, `64px`, `80px`, `96px`).
+* **Container Max-Width**: `1200px` max-width, horizontally centered (`mx-auto`).
+* **Horizontal Gutters**: `24px` (`px-6`) on mobile (<640px), scaling to `32px` (`px-8`) on desktop.
+* **Vertical Section Rhythm**:
+  * Desktop (≥1024px): `96px` (`py-24`).
+  * Mobile (<1024px): `64px` (`py-16`).
+* **Elevation & Shadows**:
+  * **Card Resting**: `box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);`
+  * **Card Hover**: `box-shadow: 0 4px 6px rgba(15, 23, 42, 0.05), 0 16px 32px rgba(15, 23, 42, 0.08);`
+  * **Glow Button Resting**: `box-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);`
+  * **Glow Button Hover**: `box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.25), 0 8px 30px rgba(6, 182, 212, 0.35); transform: translateY(-2px);`
+
+---
+
+## 5. Circuit Grid Background Specification (Hero)
+
+* **Architecture**: Handcrafted inline SVG pattern (0 external asset requests).
+* **Pattern Geometry**:
+  * Grid unit: `48px x 48px`.
+  * Grid lines: `1px` stroke in `--line` (`#E2E8F0`) at `50%` opacity.
+  * Circuit traces: Right-angle paths (`d="M0 24 H24 V48"`) with `3px` node terminal circles rendered in `--accent` (`#06B6D4`) at `15%` to `35%` opacity.
+  * Node animation: 3 random terminal nodes pulse softly between `0.15` and `0.45` opacity over a 4-second sinusoidal loop.
+* **Vignette Masking**: A radial CSS `mask-image` fades the grid out smoothly toward the left column and bottom edge, ensuring the pattern never competes with text legibility.
+
+---
+
+## 6. Motion & Interactive Contracts
+
+* **Global Transitions**: `200ms` to `300ms` `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out). No bouncy springs.
+* **Sticky Card Stacking Effect**:
+  * Four service cards with progressive sticky top offsets (`120px`, `140px`, `160px`, `180px` on desktop).
+  * Light JS scroll enhancement via `requestAnimationFrame`: cards being covered scale down to `0.96` and dim to `0.92` opacity.
+* **Conic Border Glow Animation**:
+  * Hero CTA button features an outer pseudo-element with a rotating conic gradient (`#06B6D4`, transparent, `#06B6D4`) looping over 6 seconds.
+* **Process Line Draw**:
+  * Horizontal connector line in the Process section animates `stroke-dashoffset` from 100% to 0% over `900ms` when scrolled into view.
+* **Reduced Motion Guarantee (`prefers-reduced-motion: reduce`)**:
+  * Typewriter animation stops: full static sentence is displayed immediately.
+  * Conic gradient rotation and pulsing nodes are completely halted.
+  * Sticky cards retain physical stacking without scaling or dimming.
+  * All transitions snap to `0ms`.

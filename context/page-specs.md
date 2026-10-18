@@ -1,263 +1,203 @@
-# Page Specifications & Wireframes: Elfort Dental Clinic
-
-**Scope:** Complete Section-by-Section Wireframe Specifications, Atomic Component Breakdown, and Finalized Human Copy for the Elfort Dental Clinic Concierge Landing Page.  
-**Invariants Enforced:** Zero Lorem Ipsum • Anti-Pill Law (No emoji badge chips) • Atomic Component Decomposition • WCAG 2.1 AA Contrast Enforced • Mobile Overlap Fixed (`hidden md:flex`).
-
----
+# Page Specifications & Atomic Architecture — A.U.T.O.M.A.T.E. (Tier 1)
 
 ## 1. Atomic Component Architecture
 
-### Atoms (Primitives)
-* `AtomButton`: Base button styled with `--radius-full`, focus ring, active press feedback. Variants: `whatsapp-forest`, `whatsapp-bright`, `secondary-outline`, `ghost-nav`.
-* `AtomHeading`: Typographic headline component with strict scale (`display-lg`, `headline-lg`, `headline-sm`) using Instrument Serif or Plus Jakarta Sans.
-* `AtomText`: Body text component with capped line-length (max 65ch) and `--muted-foreground`.
-* `AtomTag`: Clean tabular metadata tag (Geist Mono, uppercase tracking, zero pill emojis).
-* `AtomIcon`: Scalable Lucide icon wrapper with consistent stroke width (1.5px) and gold/neutral accents.
-* `AtomSeparator`: Subtle 1px divider line (`--border`).
+### 1.1 Atoms
+* **`Button`**:
+  * `Variant: Primary` — Background `--ink` (`#0F172A`), text white, 12px radius, 48px height. On hover: 2px lift + cyan glow halo (`box-shadow: 0 0 0 4px rgba(6,182,212,0.25), 0 8px 30px rgba(6,182,212,0.35)`).
+  * `Variant: Secondary` — Background white, 1px `--line` border, text `--ink`. On hover: cyan border transition + subtle background tint.
+  * `Variant: GlowHero` — Same as primary with an active rotating conic-gradient border animation (6s cycle).
+* **`Input / Textarea`**:
+  * Background `--surface` (`#F8FAFC`), 1px `--line` border, text `--ink`, 12px radius, 16px minimum font size (prevents iOS auto-zoom).
+  * Focus state: 3px `--accent` outline with 2px offset (`ring-2 ring-cyan-500 ring-offset-2`).
+  * Error state: 1px `--error` (`#DC2626`) border + red exclamation icon.
+* **`RadioCard / CheckboxCard`**:
+  * Custom styled selection boxes with 12px radius, 1px `--line` border. Checked state transitions border to `--accent` and background to `rgba(6,182,212,0.04)`.
+* **`MetadataLabel`**:
+  * Uppercase, `0.75rem` (12px), `letter-spacing: 0.08em`, font `JetBrains Mono` or `Inter`, `--accent-deep` (`#0E7490`) or `--ink-soft` (`#475569`).
 
-### Molecules (Composed Units)
-* `MoleculeWhatsAppCTA`: Encapsulated CTA button with WhatsApp icon, prefilled destination URL, and optional micro-reassurance label (*"Replies in minutes"*).
-* `MoleculeSectionHeader`: Section title block featuring uppercase editorial category, commanding `h2` heading, and descriptive intro paragraph. Zero pill chips.
-* `MoleculeServiceCard`: Interactive card with service title, clinical scope, bullet list, price indicator, and direct WhatsApp referral trigger.
-* `MoleculePersonaCard`: Empathetic persona scenario card highlighting specific home convenience scenarios.
-* `MoleculeTrustMetric`: Large tabular metric figure with explanatory label and subtle gold divider.
-* `MoleculeFAQAccordionItem`: Accessible Radix accordion item with smooth CSS `scrollHeight` transition, chevron rotation, and full keyboard navigation.
-* `MoleculeTestimonial`: Consented patient quote card with attribution, location, and verified visit context.
+### 1.2 Molecules
+* **`FormField`**: Label (semantic HTML `<label>` with asterisk for required) + Input/Textarea + Helper text (`--ink-soft`, 14px) + Live character counter (if applicable) + Error message container (`role="alert"`, `--error`).
+* **`TypewriterBlock`**: Static text "We build " + animated mono cycling phrase + blinking cyan cursor + visually hidden screen-reader sentence (`aria-hidden="true"` on visual animation).
+* **`AccordionItem`**: Semantic `<details>` and `<summary>` element with custom SVG chevron rotating 180° on toggle, zero JavaScript required for open/close state.
+* **`TestimonialCard`**: Blockquote in quotation marks + outcome badge (`--accent-deep` tint) + client metadata + initial circle avatar (two-letter monogram in cyan square).
 
-### Organisms (Section Composites)
-* `OrganismStickyHeader`: Top navigation with wordmark, anchor links, and desktop WhatsApp button.
-* `OrganismAnnouncementStrip`: High-trust operational banner with schedule and service territory.
-* `OrganismHero`: Full-width 60/40 visual hero with H1, value proposition, dual CTAs, live availability indicator, and in-home dental suite imagery.
-* `OrganismTrustStrip`: 4-column metric grid establishing credentials.
-* `OrganismPillars`: 3-card value proposition layout (Clinical Authority, Zero Anxiety, Boutique Discretion).
-* `OrganismServicesGrid`: 4-card clinical service grid + mid-page WhatsApp conversion strip.
-* `OrganismWhoWeServe`: 4 persona scenario cards providing instant self-identification.
-* `OrganismHowItWorks`: 3-step timeline removing friction.
-* `OrganismExperience`: Side-by-side comparative breakdown ("What We Bring / What You Provide").
-* `OrganismTestimonials`: 3 patient endorsement cards.
-* `OrganismAboutDoctor`: Clinician profile, credentials, philosophy, and personal quote.
-* `OrganismFAQ`: 6-item objection-handling accordion.
-* `OrganismFinalCTA`: High-contrast evening dark banner with scarcity note.
-* `OrganismFooter`: Practice details, legal compliance, emergency disclaimer, and copyright.
-* `OrganismMobileBar`: Fixed bottom viewport bar for touch-first conversion (`< md`).
-* `OrganismFloatingButton`: Persistent bottom-right WhatsApp trigger (`hidden md:flex`).
+### 1.3 Organisms
+* **`Navbar`**: Sticky 72px desktop / 64px mobile, backdrop blur, scroll-depth bottom border, desktop navigation links with cyan IntersectionObserver active indicators, mobile accessible drawer.
+* **`HeroSection`**: Circuit grid SVG background, 2-column layout (empty left column with establishment caption, right-aligned content block), cycling typewriter, primary CTA.
+* **`ServicesStack`**: 4 sticky overlapping cards with pure CSS device mockups and RAF scroll-linked scale/opacity transform.
+* **`ProcessTimeline`**: 3 sequential milestone cards with animated SVG trace line.
+* **`ContactBanner`**: Split block: contact card (email, phone, WhatsApp) + dark ink card with cyan glow button.
+* **`ProjectBriefForm`**: 4-section form with sticky progress bar, live draft restore banner, client-side validation, honeypot protection, and instant success screen.
 
 ---
 
-## 2. Section-by-Section Wireframe Specifications & Copy
+## 2. Page 1: Landing Page (`index.html`) Detailed Specs
 
-### SECTION H: Sticky Header
-* **Position:** Fixed top (Z-Index 40, Height 80px, Background `--background/90` with backdrop blur).
-* **Layout:** Container max-80rem, flex justify-between items-center.
-* **Element Inventory:**
-  1. Wordmark: `"ELFORT"` (Instrument Serif, 24px, tracking 0.05em) + sub-label `"DENTAL CLINIC • CONCIERGE"` (Geist Mono, 9px, tracking 0.2em).
-  2. Desktop Navigation: `#services` ("Services"), `#how-it-works` ("How It Works"), `#experience` ("The Visit"), `#about` ("About Dr. [Name]"), `#faq` ("FAQ").
-  3. Action CTA: `MoleculeWhatsAppCTA` ("Inquire on WhatsApp", compact variant, forest green).
-* **Mobile Behavior:** Nav links hidden; wordmark left, compact WhatsApp icon button right.
+### 2.1 Navigation Bar
+* **Position**: Sticky top, 72px height (64px mobile), `z-index: 50`.
+* **Visuals**: White at 85% opacity (`bg-white/85`), `backdrop-filter: blur(12px)`. 1px bottom border in `--line` transitions in after 8px scroll.
+* **Left**: Inline SVG logo (AE monogram with 3 circuit node dots) + wordmark `A.U.T.O.M.A.T.E.` in Inter 800.
+* **Right**:
+  * Desktop Links: `Services` (`#services`), `Process` (`#process`), `Success Stories` (`#stories`), `Contact` (`#contact`). Active link gets 2px cyan underline via IntersectionObserver.
+  * Primary Button: "Get Started" -> links directly to `start.html`.
+* **Mobile Drawer**:
+  * Hamburger button with `aria-expanded="false"`, `aria-label="Toggle navigation menu"`.
+  * Drops down a full-width white panel with stacked links + full-width "Get Started" button.
+  * Closes on link click, overlay tap, or `Escape` key press. Focus returns to hamburger.
 
----
+### 2.2 Hero Section
+* **Dimensions**: `min-h-[calc(100svh-72px)]`, flex align-center.
+* **Background**: White with the inline SVG circuit grid pattern (48px grid, cyan traces, 3 pulsing terminal nodes).
+* **Grid Split (Desktop)**:
+  * Left column (5 cols): Open circuit visual space + small vertical label: `"EST. 2024 — Lagos, Nigeria"` (flagged as `[YOUR INPUT]`).
+  * Right column (7 cols): Fully right-aligned content block (`text-right items-end`).
+* **Content Hierarchy (Top to Bottom)**:
+  1. Status Eyebrow: Pulsing cyan node + `"Now taking new projects"` (flagged as `[YOUR INPUT]`).
+  2. H1: `A.U.T.O.M.A.T.E.` (Giant, tight tracking `-0.03em`, with each period rendered in `--accent` cyan).
+  3. Tagline: `"Digital Precision. Human Connection. Engineered for Scalable Impact."` (`--ink-soft`, 1.25rem–1.5rem).
+  4. Typewriter Line:
+     * Static prefix: `"We build "`
+     * Rotating Mono phrases: `website`, `ecommerce website`, `web application`, `softwares and applications, projects`.
+     * Speed: 70ms type, 40ms delete, 1600ms pause, 350ms delete pause.
+     * Screen-reader alternative: `<span class="sr-only">We build websites, ecommerce websites, web applications, and custom software.</span>`
+  5. Primary CTA: "Get Started →" (Glow button with conic-gradient border, linking to `start.html`).
+  6. Reassurance line: `"Takes about 5 minutes. No payment, no commitment."` (14px, `--ink-soft`).
 
-### SECTION 1: Announcement & Operating Strip
-* **Position:** Top of page below header (Z-Index 10, Height 40px, Background `--secondary`, border-b).
-* **Layout:** Centered flex row with subtle bullet separators.
-* **Copy:**
-  - Item 1: `"Now Scheduling Private Home Visits in [Metropolitan Area]"`
-  - Item 2: `"State Dental Board Licensed & Insured"`
-  - Item 3: `"Mon–Sat 8:00 AM – 7:00 PM • Sunday Emergency On-Call"`
-* **Mobile Behavior:** Marquee or single centered item ("Now Scheduling in [Metropolitan Area] • Licensed & Insured").
+### 2.3 Core Services: Sticky Stacked Cards (`#services`)
+* **Background**: `--surface` (`#F8FAFC`).
+* **Header**: Eyebrow `"What we build"` (uppercase mono), H2 `"Four ways we build for you"`, subtext `"Pick the one that fits, or mix them. We scope it with you."`
+* **Layout**: 4 cards, each with `position: sticky`. Top offsets: `top-[120px]`, `top-[140px]`, `top-[160px]`, `top-[180px]` on desktop. Mobile offsets: `top-[80px]`, `top-[92px]`, `top-[104px]`, `top-[116px]`.
+* **Card Anatomy (Desktop: 2-column text left / visual right)**:
+  * Left side: Large faded mono number (`01`–`04`), Lucide icon in cyan tinted box, title, 1-line description, 4 check-list bullets, "Good for:" target list, "Start this project →" link (`start.html`).
+  * Right side: Pure CSS interactive UI mockup.
+* **Card Specifics**:
+  1. **01. Standard Websites** (`layout-template` icon):
+     * Copy: "Fast, clean websites that explain what you do and make it easy to contact you."
+     * Bullets: Mobile-first responsive design; Clear page structure and navigation; Basic SEO and fast load times; Contact forms and WhatsApp links.
+     * Good for: Personal brands, service businesses, schools, clinics, portfolios.
+     * Visual: Pure CSS browser chrome mockup with title bar, search pill, and layout wireframe.
+  2. **02. E-commerce Platforms** (`shopping-cart` icon):
+     * Copy: "Online stores that let customers browse, pay, and come back, while you manage stock without stress."
+     * Bullets: Secure checkout and payment gateway setup; Inventory and order management; Product pages built to convert; Discount codes and customer accounts.
+     * Good for: Fashion, food, retail, and any business selling products online.
+     * Visual: Pure CSS product card mockup with image tile, price tag, and "Add to Cart" button.
+  3. **03. Web Applications** (`app-window` icon):
+     * Copy: "Interactive tools your users log into: dashboards, portals, booking systems, and marketplaces."
+     * Bullets: User accounts and role-based access; Dashboards with live data; Admin panels you can actually use; Third-party integrations and APIs.
+     * Good for: Startups, campus platforms, logistics, membership communities.
+     * Visual: Pure CSS dashboard mockup with metric stats and mini bar chart.
+  4. **04. Custom Software Development** (`cpu` icon):
+     * Copy: "Software built around the way your business already works, including automation that removes repetitive tasks."
+     * Bullets: Tailored system architecture; Workflow and automation pipelines; AI-assisted processes where they genuinely help; Internal business tools and integrations.
+     * Good for: Teams drowning in manual work, or ideas that no off-the-shelf tool covers.
+     * Visual: Pure CSS network graph mockup with pulsing node dots and connecting SVG paths.
 
----
+### 2.4 Our Process Section (`#process`)
+* **Background**: White (`#FFFFFF`).
+* **Header**: Eyebrow `"How it works"`, H2 `"Three steps from idea to live"`, subtext `"No mystery. You always know what stage we are in."`
+* **Layout**: 3 equal columns connected by a continuous horizontal line on desktop (vertical timeline on mobile).
+* **Cards**:
+  * **Step 1: Discovery** (`search` icon) — "We learn your business, your users, and what success looks like." Bullets: Define business requirements; Map the user flow; Set strategic goals and scope. Deliverable: "You'll get: a clear project scope and page plan."
+  * **Step 2: Development** (`code-2` icon) — "We build it carefully, show you progress, and test everything." Bullets: Precision coding; UI/UX polish; Rigorous system integration and testing. Deliverable: "You'll get: working previews you can review and react to."
+  * **Step 3: Launch & Scale** (`rocket` icon) — "We deploy, tune performance, and hand over something ready to grow." Bullets: Deployment and domain setup; Performance optimization; Handover and walkthrough. Deliverable: "You'll get: a live, growth-ready platform and the know-how to run it."
 
-### SECTION 2: Hero Section
-* **Position:** Main viewport above the fold.
-* **Layout:** 60/40 Asymmetric Split (Desktop), stacked single-column (Mobile).
-* **Left Column (Text & Conversion):**
-  - Category Eyebrow: `"PRIVATE IN-HOME DENTAL CARE"` (Plus Jakarta Sans, 12px, bold, tracking 0.15em, text `--primary-text-safe`).
-  - H1 Display Heading: `"Exceptional Dental Care, Delivered to Your Doorstep."` (Instrument Serif, 54px desktop / 38px mobile, leading 1.15).
-  - Subhead: `"Experience unhurried, hospital-grade dental treatments in the quiet comfort of your residence or private office. Tailored for busy executives, families, and patients seeking calm, anxiety-free care."` (Plus Jakarta Sans, 18px, leading 1.6, text `--muted-foreground`).
-  - Primary CTA Group:
-    * Primary Button: `"Request a Home Visit on WhatsApp"` (`MoleculeWhatsAppCTA`, Forest Green `#128C4A`, white text, 48px height, rounded-full, WhatsApp icon).
-    * Secondary Anchor: `"Explore Treatments & Pricing"` (Ghost button, border-b, arrow icon, anchors to `#services`).
-  - Micro-Reassurance Line: `"Direct response from our clinical team • Replies within minutes • No obligation"` (Geist Mono, 12px).
-  - Trust Micro-Bar: 3 checkmarks: `"Hospital-Grade Autoclave Sterilization"`, `"Board-Certified Clinicians"`, `"Zero Waiting Room Anxiety"`.
-* **Right Column (Visual Grounding):**
-  - High-resolution editorial portrait/scene: Quiet luxury setting with portable medical unit (sleek Pelican-style case, gentle ambient light, zero intimidating clinic machinery).
-  - Floating Live Status Card (bottom left of image):
-    * Pulsing amber/gold dot + `"Now Booking [Area] • 4 Home Slots Available This Week"` (Geist Mono, 12px).
+### 2.5 Client Success Stories (`#stories`)
+* **Background**: `--surface` (`#F8FAFC`).
+* **Header**: Eyebrow `"Success stories"`, H2 `"Built with clients who grew"`, subtext `"A few of the people who trusted us with their project."`
+* **Trust Row**: 3 real numbers (flagged as `[YOUR INPUT]`; omitted if no real metrics provided).
+* **Cards (Array-driven in `main.js`)**: 3 cards, each marked with a subtle gray `Placeholder` badge:
+  * Card 1: E-commerce Retailer — "The checkout is seamless and our customers stopped calling to ask how to pay." Outcome: "Orders up after launch". Client: T. Adeyemi, Founder, Retail Studio. Avatar: `TA`.
+  * Card 2: Professional Clinic — "Patients book consultations directly without our front desk getting overwhelmed." Outcome: "Zero booking errors". Client: Dr. E. Okafor, Director, HealthFirst. Avatar: `EO`.
+  * Card 3: Logistics SaaS — "Replaced 6 messy spreadsheets with one automated dashboard that our drivers actually use." Outcome: "15 hrs saved weekly". Client: M. Ibrahim, Operations Lead. Avatar: `MI`.
 
----
+### 2.6 FAQ Section
+* **Background**: White (`#FFFFFF`).
+* **Header**: Eyebrow `"Common questions"`, H2 `"Frequently asked questions"`, subtext `"Straightforward answers to the questions clients ask before starting."`
+* **5 Native Details/Summary Items**:
+  1. *How long does a project take?* -> "Standard websites typically take 2–3 weeks. E-commerce platforms and web applications take 4–8 weeks depending on scope. We give you a guaranteed milestone schedule during discovery."
+  2. *How much does it cost?* -> "Every project is priced transparently based on the scope defined in your brief. Standard websites start from a fixed rate, while complex applications are quoted with zero hidden fees."
+  3. *What do I need to give you before we start?* -> "Just fill out the project brief on the next page, and provide a Google Drive link with your logo, brand guidelines, and any reference images you'd like included."
+  4. *Do you handle hosting and the domain?* -> "Yes. We configure your custom domain, SSL certificates, and cloud hosting, and hand over complete ownership upon launch."
+  5. *What happens after launch?* -> "Every project includes a 30-day post-launch warranty and bug-fix guarantee, plus optional ongoing maintenance and optimization retainers."
 
-### SECTION 3: Trust Metric Strip
-* **Position:** Immediately following Hero.
-* **Layout:** 4-Column Grid (Desktop), 2x2 Grid (Mobile). Background `--card`, border-y `--border`.
-* **Metrics:**
-  1. `[12]+ Years` — Clinical Private Practice Experience
-  2. `[1,500]+` — Completed In-Home Patient Visits
-  3. `100%` — Hospital-Grade Mobile Sterilization Standards
-  4. `4.9 / 5.0` — Patient Satisfaction Across 200+ Private Reviews
+### 2.7 Contact & Dark CTA Banner (`#contact`)
+* **Split Layout**:
+  * **Contact Details Card**: White card with email link (`mailto:`), phone link (`tel:`), and WhatsApp button (`https://wa.me/...`). Flagged as `[YOUR INPUT]`.
+  * **Final CTA Banner**: The only dark block on the site (`bg-[#0F172A]`, white text).
+    * H2: `"Have a project in mind? Let's build it."`
+    * Subtext: `"Submit your brief today. We'll review your scope and reply within 24 hours with an actionable roadmap."`
+    * CTA: Glowing Cyan "Get Started" button -> `start.html`.
 
----
-
-### SECTION 4: Three Pillars of Care
-* **Position:** Section 4.
-* **Layout:** 3-Column Card Grid (Desktop), stacked single column (Mobile).
-* **Headline:** `"Dentistry Reimagined Around Your Life"`
-* **Cards:**
-  1. **Clinical Authority:**
-     - Title: `"Hospital-Grade Precision"`
-     - Body: `"We transport complete clinical capabilities into your home—from ultra-low-radiation digital sensors to biological autoclave monitored instruments. Zero compromises on clinical rigor."`
-  2. **Zero Anxiety:**
-     - Title: `"Calm, Unhurried Appointments"`
-     - Body: `"Never feel rushed, judged, or trapped in a noisy waiting room. You control the pace of every treatment in your own living room, armchair, or bedroom."`
-  3. **Boutique Discretion:**
-     - Title: `"Absolute Privacy & Convenience"`
-     - Body: `"Unmarked arrivals, confidential treatment, and flexible scheduling designed around demanding executive and family itineraries."`
-
----
-
-### SECTION 5: Comprehensive Services Grid
-* **Position:** `#services`.
-* **Layout:** 2x2 Card Grid with high-contrast mid-page conversion strip.
-* **Headline:** `"Clinical Treatments in the Sanctuary of Your Home"`
-* **Service Cards:**
-  1. **Comprehensive Preventive Suite:**
-     - Scope: Ultrasonic dental cleaning, gentle periodontal scaling, comprehensive oral cancer screening, remineralizing fluoride varnish, and digital imaging.
-     - Prefilled Link: `wa.me/[PHONE]?text=Hi,%20I'd%20like%20to%20inquire%20about%20a%20Comprehensive%20Preventive%20visit.`
-     - CTA Text: `"Inquire for Preventive Visit →"`
-  2. **Cosmetic Enhancements & Smile Design:**
-     - Scope: Professional in-home enamel brightening, cosmetic composite bonding, custom nightguards, clear aligner consultations.
-     - Prefilled Link: `wa.me/[PHONE]?text=Hi,%20I'd%20like%20to%20inquire%20about%20Cosmetic%20Brightening%20and%20Smile%20Design.`
-     - CTA Text: `"Inquire for Cosmetic Care →"`
-  3. **Restorative & Gentle Maintenance:**
-     - Scope: Tooth-colored composite restorations, crown recementation, chipped tooth repairs, emergency relief, and desensitizing therapies.
-     - Prefilled Link: `wa.me/[PHONE]?text=Hi,%20I'd%20like%20to%20inquire%20about%20Restorative%20Treatment%20at%20home.`
-     - CTA Text: `"Inquire for Restorative Care →"`
-  4. **Family & Senior Concierge Care:**
-     - Scope: Multi-member household visits, gentle pediatric habituation, comfortable bedside oral care for seniors with limited mobility, denture adjustments.
-     - Prefilled Link: `wa.me/[PHONE]?text=Hi,%20I'd%20like%20to%20inquire%20about%20Family%20or%20Senior%20Concierge%20Care.`
-     - CTA Text: `"Inquire for Family / Senior Visit →"`
-* **Mid-Page Conversion Banner:**
-  - Copy: `"Need a treatment not listed above? Send us a quick note on WhatsApp to verify clinical feasibility."`
-  - Button: `"Chat Directly with Dr. [Name]"`
-
----
-
-### SECTION 6: Who Elfort Serves (Persona Self-Identification)
-* **Position:** Section 6.
-* **Layout:** 4-Column Horizontal Cards (Desktop), 2x2 (Tablet), 1-Col (Mobile).
-* **Headline:** `"Tailored Care for Discerning Lifestyles"`
-* **Persona Profiles:**
-  1. **For Busy Executives:** Eliminate the 2.5-hour clinic disruption. Receive routine cleanings between video conferences.
-  2. **For Parents & Children:** No stressful parking, waiting room tantrums, or childcare juggling. The whole family treated in one relaxed afternoon.
-  3. **For Anxious Patients:** Full autonomy. Bring your favorite music, take breaks whenever needed, and experience dentistry without clinic phobia.
-  4. **For Aging Parents & Bedside:** Compassionate, dignified bedside care for loved ones with limited mobility or physical fatigue.
+### 2.8 Global Footer
+* Logo + tagline: `"Digital Precision. Human Connection. Engineered for Scalable Impact."`
+* Navigation columns repeated (Services, Process, Stories, FAQ).
+* Legal & Social links: Twitter/X, GitHub, LinkedIn (flagged as `[YOUR INPUT]`).
+* Dynamic copyright: `"© <span id="current-year">2026</span> A.U.T.O.M.A.T.E. All rights reserved."`
 
 ---
 
-### SECTION 7: How It Works (3 Frictionless Steps)
-* **Position:** `#how-it-works`.
-* **Layout:** 3-Step Horizontal Process with connecting guideline.
-* **Headline:** `"From First Message to Treatment in Three Simple Steps"`
-* **Steps:**
-  1. **Step 1: Message on WhatsApp:** Send a brief message describing your location and required care. Our team replies within minutes to confirm availability and upfront fee estimates.
-  2. **Step 2: Virtual Screening:** Share brief clinical details or past dental records securely so we prepare the exact instrument suite for your home.
-  3. **Step 3: Concierge Arrival:** Dr. [Name] arrives with sterilized mobile equipment, sets up in 10 minutes in your chosen room, and provides unhurried, private care.
+## 3. Page 2: Project Registration (`start.html`) Detailed Specs
 
----
+### 3.1 Header & Sticky Progress Bar
+* **Top Navigation**: Same sticky nav as landing page; anchor links point to `index.html#services`, etc.
+* **Header Banner**: Back link `"← Back to home"`, Eyebrow `"Project brief"`, H1 `"Tell us about your project"`, subtext `"The more detail you give, the faster and more accurate your quote and build will be. Most people finish in 5 to 10 minutes."`
+* **Sticky Progress Bar**: Fixed under nav when scrolling. Shows progress bar (0% to 100%) + step label (e.g., `"Step 2 of 4: Audience and goals"`). Updates dynamically via IntersectionObserver on each `<fieldset>`.
+* **Draft Restoration Alert**: If a draft exists in `localStorage`, displays an emerald restoration banner: `"We restored your draft. [Clear draft]"`.
 
-### SECTION 8: The In-Home Experience ("What We Bring / What You Provide")
-* **Position:** `#experience`.
-* **Layout:** Side-by-side 2-column comparison card dispelling equipment fears.
-* **Left Column ("What Elfort Brings"):**
-  - Portable ergonomic treatment unit & silent air compressor
-  - Ultra-low radiation handheld digital x-ray sensor
-  - Hospital-grade autoclave sterilized instrument cassettes
-  - Protective hygienic floor draping & HEPA air filtration
-  - Calming ambient sound & optional eye masks
-* **Right Column ("What You Provide"):**
-  - A standard living room, dining area, or bedside space (approx 6x6 ft)
-  - One standard household electrical outlet (110V/220V)
-  - Access to a standard sink for hand hygiene
-  - Your favorite chair or sofa (we adapt comfortably to your posture)
+### 3.2 Form Architecture & Fields
 
----
+```text
+Section 1: About you and your business
+├── Full Name * (text, autocomplete="name", 2-80 chars)
+├── Business Name * (text, autocomplete="organization", 2-100 chars)
+├── One-sentence Description * (text, max 160 chars with live counter)
+├── Email Address * (email, autocomplete="email")
+└── WhatsApp / Phone * (tel, autocomplete="tel", helper: "Include country code, e.g. +234...")
 
-### SECTION 9: Patient Testimonials & Case Stories
-* **Position:** Section 9.
-* **Layout:** 3-Card Carousel/Grid with verified star ratings and verified review tags.
-* **Headline:** `"Private Care, Praised by Patients"`
-* **Testimonials:**
-  1. `"Having Dr. [Name] come to our home was life-changing for our family. Both kids had their teeth cleaned in their pajamas without a single tear, and I answered work emails in the other room. We will never go back to a waiting room."` — *Eleanor M., Mother of Two, [Neighborhood]*
-  2. `"As someone who avoided the dentist for six years due to extreme panic, the unhurried gentleness of this visit was remarkable. Dr. [Name] was completely patient, explained every step, and treated me in my favorite armchair."` — *Marcus V., Managing Partner, [Financial District]*
-  3. `"My mother has severe arthritis and getting her into a clinic chair was traumatic. Elfort provided gentle, dignified cleaning right at her bedside. Highly recommended for senior care."` — *Sarah K., [Neighborhood]*
+Section 2: Audience and goals
+├── The Audience * (textarea, max 1000 chars with counter)
+├── The Primary Problem Solved * (textarea, max 1000 chars with counter)
+├── Main Action the Site Should Drive * (text, e.g., "Book a call, buy products, request a quote")
+└── Project Type * (Radio cards: Standard Website | E-commerce | Web Application | Custom Software | Not sure yet)
 
----
+Section 3: Look, feel, and inspiration
+├── Existing Branding (text, optional, "Colors, fonts, logo notes. Write 'none yet' if starting fresh")
+├── Three Liked Websites * (3 structured rows: URL input + "What do you like about it?" input; at least 1 required)
+├── Three Disliked Websites (3 structured rows: URL input + "What put you off?" input; optional)
+└── Tone Words * (text input + 4 clickable suggestion chips: [Professional] [Friendly] [Bold] [Minimal])
 
-### SECTION 10: About Dr. [Dentist Name]
-* **Position:** `#about`.
-* **Layout:** 40/60 Split (Doctor Portrait Left, Bio & Credentials Right).
-* **Headline:** `"A Commitment to Uncompromising, Patient-First Dentistry"`
-* **Doctor Bio:**
-  - `"Dr. [First & Last Name], DDS / DMD, founded Elfort Dental Clinic with a clear conviction: exceptional clinical dentistry should fit effortlessly into patients' lives, not demand their day. With over [12] years of clinical practice and advanced training in anxiety-free restorative protocols, Dr. [Name] brings the standards of a premier private clinic directly to your personal sanctuary."`
-  - Verified Credentials Box:
-    * Dental Degree: `[University / Dental School, Year]`
-    * State Dental Board License No: `[License No. Verified]`
-    * Professional Affiliations: `[ADA / Relevant National Association Member]`
-    * Infection Control: `Hospital-grade autoclave sterilization protocols confirmed`
+Section 4: Scope, features, and assets
+├── Pages Required * (Checkboxes: Homepage, About, Services, Pricing, Portfolio, Contact, Blog, FAQ, Login/Account, Other [reveals text input])
+├── Special Features Needed (Checkboxes: Booking calendar, Payment gateway, Custom forms, Blog/CMS, User accounts, Admin dashboard, WhatsApp integration, Live chat, Multi-language, Other [reveals text input])
+├── Budget Range (Select dropdown: [YOUR INPUT: currency ranges], "Not sure yet")
+├── Ideal Timeline (Select dropdown: ASAP | 2–4 weeks | 1–2 months | Flexible)
+└── Asset Upload Link * (url, exact copy helper: "Provide a Google Drive link containing your logo, brand assets, and any images your website will need." + collapsible 4-step guide)
 
----
+Final Block & Submission
+├── Anything else we should know? (textarea, optional)
+├── Honeypot Trap (name="website_url_confirm", off-screen, tabindex="-1", autocomplete="off")
+├── Consent Checkbox * ("I agree that A.U.T.O.M.A.T.E. may contact me about this project.")
+└── Submit Button: "Submit Project Brief" (Full width, glowing primary button)
+```
 
-### SECTION 11: Frequently Asked Questions (FAQ Accordion)
-* **Position:** `#faq`.
-* **Layout:** Centered single-column accordion (Max 800px width).
-* **Questions & Verbatim Human Answers:**
-  1. **Q: Is mobile dentistry as clean and sterile as a traditional dental clinic?**  
-     *A: Absolutely. We follow stringent hospital-grade infection control standards. All clinical instruments arrive in sealed, autoclave-sterilized cassettes opened exclusively in front of you. We use single-use disposables wherever appropriate and protect your home surfaces with medical draping.*
-  2. **Q: How much space is needed for the appointment?**  
-     *A: Very little. A space approximately 6 by 6 feet in a living room, dining room, study, or bedroom is plenty. All we need is access to a standard electrical outlet and a nearby sink for clinical hand washing.*
-  3. **Q: What are your fees, and do you accept dental insurance?**  
-     *A: We operate on an upfront, transparent fee schedule with zero surprise bills. We provide detailed itemized superbills with standard dental procedure codes that you can submit to your PPO dental insurer for out-of-network reimbursement. We provide exact visit estimates via WhatsApp before confirming your booking.*
-  4. **Q: I experience severe dental phobia. How do you handle anxious patients?**  
-     *A: Anxiety-free care is a foundational pillar of Elfort Dental Clinic. You are always in control: you decide when we begin, when we take a break, and what music you prefer. There are no cold waiting rooms, no clinical smells, and no judgment regarding past dental neglect.*
-  5. **Q: What areas do you serve, and what is your advance booking time?**  
-     *A: We serve patients throughout [City/Metropolitan Area] within a [15-mile / 25km] radius. We typically schedule visits 2 to 5 days in advance, with limited same-day or next-day slots reserved for urgent needs.*
-  6. **Q: How do you handle true dental emergencies?**  
-     *A: For active pain, broken restorations, or chipped teeth, we offer priority home visits whenever our clinical schedule allows. However, for severe facial trauma, uncontrolled bleeding, or breathing difficulties, please call [911 / Local Emergency Services] or visit the nearest emergency department immediately.*
-
----
-
-### SECTION 12: Final Call to Action Banner
-* **Position:** Section 12 (Pre-Footer).
-* **Layout:** High-contrast evening dark banner (`--dark-surface`, text `--dark-foreground`, rounded-3xl with subtle gold perimeter glow).
-* **Headline:** `"Experience Dental Care on Your Terms."`
-* **Subhead:** `"Limited in-home appointments scheduled each week to guarantee unhurried, private clinical care for every patient."`
-* **CTA Button:** `MoleculeWhatsAppCTA` ("Inquire & Reserve Your Visit on WhatsApp", large 52px, Forest Green `#128C4A` or Bright `#25D366` with `#0B3D1E` text).
-* **Micro-Copy:** `"Direct WhatsApp chat with our dental concierge • No cumbersome forms • Response in minutes"`
-
----
-
-### SECTION 13: Practice Details & Legal Footer
-* **Position:** Bottom of page.
-* **Layout:** 3-Column Footer Grid + Bottom Legal Copyright Bar.
-* **Column 1:** Elfort Dental Clinic wordmark, operating philosophy, and direct emergency medical disclaimer.
-* **Column 2:** Service Area ([City / Neighborhoods]), Operating Hours (`Mon–Sat 8:00 AM – 7:00 PM • Sunday Emergency On-Call`).
-* **Column 3:** Direct Contact (`WhatsApp: [Phone Number]`, `Email: concierge@[domain].com`).
-* **Legal Bar:**
-  - Copyright: `© 2026 Elfort Dental Clinic. All rights reserved.`
-  - Medical Disclaimer: `"The information on this website is for informational purposes and does not establish a dentist-patient relationship until an in-person clinical examination is conducted."`
-  - Links: `Privacy Policy`, `Terms of Service`, `Accessibility Statement`.
-
----
-
-### SECTION F1: Persistent Mobile Sticky Bar (`< md` only)
-* **Position:** Fixed bottom viewport (Z-Index 50, Height 68px, Background `--background/95`, border-t).
-* **Layout:** Flex row with compact service reminder on left + full-touch WhatsApp button on right.
-* **Button Copy:** `"Book Home Visit on WhatsApp"` (`MoleculeWhatsAppCTA`, 44px min tap target).
-* **Micro-label:** `"Direct reply • Usually in minutes"`
-
----
-
-### SECTION F2: Floating Concierge Button (`md+` only)
-* **Position:** Fixed bottom-right (Z-Index 40, Bottom 32px, Right 32px, `hidden md:flex`).
-* **Fix Applied:** Strictly hidden on mobile screens (`< md`) to eliminate viewport collisions with Section F1.
-* **Appearance:** Circular green WhatsApp button with pulsing gold ping ring and tooltip label `"Direct Concierge Chat"`.
+### 3.3 Draft Saving & Submission Lifecycle
+1. **Auto-Save**: On any input, debounce 500ms and write form state JSON to `localStorage.setItem('automate_brief_draft', ...)`.
+2. **Honeypot Check**: If `website_url_confirm` is non-empty, silently transition to success screen without dispatching.
+3. **Time-on-Page Check**: Reject submissions completed in under 5 seconds (bot protection).
+4. **Validation on Blur & Submit**: Highlight invalid fields with red border + icon + specific error message (`role="alert"`). Focus first invalid field on submit.
+5. **Drop-in Backend Hook (`FORM_CONFIG`)**:
+   ```javascript
+   const FORM_CONFIG = {
+     endpoint: null, // e.g. "https://formspree.io/f/xxxx" or Google Apps Script URL
+     method: "POST",
+     simulateDelayMs: 1200
+   };
+   ```
+6. **Animated Success Screen**:
+   * Large drawing SVG checkmark icon in emerald-cyan.
+   * H2: `"Brief received."`
+   * Personal message: `"Thanks, <span id="client-first-name"></span>. We will review your requirements and reply within 24 hours on your email or WhatsApp number."`
+   * Next steps list (Discovery call -> Scoped plan -> Timeline).
+   * Two action buttons: `"Back to home"` and `"Submit another brief"`.
+   * **"Copy my brief" Button**: Copies a clean plain-text summary of all answers to the visitor's clipboard with visual confirmation ("Copied to clipboard!").
